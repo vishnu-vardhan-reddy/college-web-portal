@@ -1,0 +1,85 @@
+.facultyCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background: linear-gradient(45deg, #ffffff, #f0efef);
+  box-shadow: 7px -7px 14px #fffbfb, -7px 7px 14px #ffffff;
+  padding: 0 20px;
+  margin-bottom: 4rem;
+}
+
+.facultyCard > img {
+  width: 7rem;
+  margin-top: -3rem;
+  object-fit: contain;
+}
+
+.facultyCard > h3 {
+}
+
+.facultyCardContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.facultyCardContainer > h3 {
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.facultyCardContainer > h3:first-child {
+  color: #f60c0c;
+  letter-spacing: 1px;
+  margin-top: 0.4rem;
+}
+
+.facultyCardContainer__content {
+  margin-top: 0.4rem;
+  display: flex;
+  flex-direction: column;
+
+  justify-content: flex-end;
+}
+
+.facultyCardContainer__content > p {
+  margin-top: 0.6rem;
+}
+
+.facultyCard__contact {
+  margin-top: 0.6rem;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.facultyCard__contact > .MuiSvgIcon-root {
+  margin-right: 10px;
+  font-size: 1.4rem;
+}
+
+.facultyCard__contact > p {
+  margin-left: 10px;
+}
+
+.facultyCardContainer > button {
+  margin-top: 0.7rem;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+}
+
+.facultyCardContainer > button > .MuiButton-label {
+  color: #f60c0c;
+}
+
+@media screen and (max-width: 780px) {
+  .facultyCard {
+    padding: 0 5px;
+  }
+  .facultyCard > img {
+    width: 8rem;
+  }
+}

@@ -1,0 +1,76 @@
+.executiveCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background: linear-gradient(45deg, #ffffff, #f0efef);
+  box-shadow: 7px -7px 14px #fffbfb, -7px 7px 14px #ffffff;
+  width: 22vw;
+  margin-top: 5rem;
+}
+
+.executiveCard > img {
+  width: 10vw;
+  margin-top: -4rem;
+  object-fit: contain;
+}
+
+.executiveCard > h3 {
+}
+
+.executiveCardContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px 10px;
+}
+
+.executiveCardContainer > h3 {
+  text-align: center;
+  font-size: 1rem;
+}
+
+.executiveCardContainer > h3:first-child {
+  color: #f60c0c;
+  letter-spacing: 1px;
+  margin-top: 0.4rem;
+}
+
+.executiveCardContainer__content {
+  margin-top: 0.4rem;
+  display: flex;
+  flex-direction: column;
+
+  justify-content: flex-end;
+}
+
+.executiveCardContainer__content > p {
+  margin-top: 0.7rem;
+}
+
+.executiveCard__contact {
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.executiveCard__contact > .MuiSvgIcon-root {
+  margin-right: 10px;
+  font-size: 1.4rem;
+}
+
+.executiveCard__contact > p {
+  margin-left: 10px;
+}
+
+.executiveCardContainer > button {
+  margin-top: 1rem;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+}
+
+.executiveCardContainer > button > .MuiButton-label {
+  color: #f60c0c;
+}

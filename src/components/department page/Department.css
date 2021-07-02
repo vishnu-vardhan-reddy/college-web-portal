@@ -1,0 +1,50 @@
+.departmentContainer,
+.department {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+.department > h1 {
+  margin: 2rem 0;
+  font-size: 1.5rem;
+  position: relative;
+}
+
+.department > h1::after {
+  position: absolute;
+  content: '';
+  margin-left: 2rem;
+  bottom: -2px;
+  width: 10vw;
+  border: 1px solid #2c5877;
+}
+
+.department > h1::before {
+  position: absolute;
+  content: '';
+  left: -12.5vw;
+  bottom: -2px;
+  width: 10vw;
+  border: 1px solid #2c5877;
+}
+
+#syllabus {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 780px) {
+  .department > h1 {
+    margin: 2rem 0;
+    font-size: 1.3rem;
+    position: relative;
+  }
+  .department > h1::after,
+  h1::before {
+    display: none;
+  }
+}

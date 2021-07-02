@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@700&display=swap');
+
+.contactUs {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contactUs__container {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background: url('./locationImg.jpg') no-repeat;
+  background-size: 100vw 60vh;
+}
+
+/* .contactUs__container > .contactUs__map {
+  object-fit: cover;
+  height: 60vh;
+  width: 100vw;
+} */
+
+.contactUs__containerCard {
+  margin-top: 15rem;
+  width: 60vw;
+  /* height: 60vh; */
+  border-radius: 7px;
+  background: #ffffff;
+  display: flex;
+}
+
+.contactUs__containerCardLeft {
+  flex: 0.5;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid lightgray;
+  border-bottom-left-radius: 7px;
+  border-top-left-radius: 7px;
+}
+
+.contactUs__containerCardLeftTop {
+  border-bottom: 1px solid lightgray;
+  padding-bottom: 2rem;
+}
+
+.contactUs__containerCardLeftTop > h2 {
+  font-weight: 600;
+  font-size: 1.3rem;
+  margin-top: 1rem;
+  text-align: center;
+  font-family: 'Catamaran', sans-serif;
+}
+
+.contactUs__containerCardRight {
+  border-bottom-right-radius: 7px;
+  border-top-right-radius: 7px;
+  background-color: #f96f26;
+}
+
+.contactUs__row {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+}
+
+.contactUs__row > .MuiSvgIcon-root {
+  margin-right: 7px;
+  font-size: 1.4rem;
+}
+
+.contactUs__row > p {
+  margin-left: 10px;
+  font-size: 0.9rem;
+}
+
+.contactUs__containerCardLeftBottom {
+  margin-top: 1.5rem;
+}
+
+.contactUs__containerCardLeftBottom > h2 {
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.3rem;
+  font-family: 'Catamaran', sans-serif;
+}
+
+.contactUs__socialRow {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.contactUs__socialRow > .MuiSvgIcon-root {
+  margin-right: 1rem;
+  margin-top: 2rem;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.contactUs__socialRow > .MuiSvgIcon-root:hover {
+  color: #f96f26;
+  transform: scale(1.2);
+}
+
+.contactUs__containerCardRight {
+  flex: 0.5;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.contactUs__containerCardRight > h2 {
+  font-weight: 600;
+  font-size: 1.3rem;
+  margin: 1rem 0 2rem 0;
+  text-align: center;
+  color: #fff;
+  font-family: 'Catamaran', sans-serif;
+}
+
+.contactUs__containerCardRight > form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contactUs__containerCardRight > form > input {
+  outline-width: 0;
+  border: none;
+  padding: 8px 10px;
+  border-radius: 29px;
+  width: 80%;
+  margin-bottom: 1rem;
+}
+
+.contactUs__containerCardRight > form > textarea {
+  outline-width: 0;
+  border: none;
+  padding: 8px 10px;
+  border-radius: 8px;
+  width: 80%;
+  margin-bottom: 2rem;
+}
+
+.contactUs__containerCardRight > form > button {
+  outline-width: 0;
+  border: none;
+  padding: 8px 10px;
+  border-radius: 8px;
+  width: 40%;
+  margin-bottom: 2rem;
+  color: black;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.faqContainer {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.faqContainer > h1 {
+  font-size: 1.3rem;
+  margin: 5rem 0 2rem 0;
+  color: #f96f26;
+  padding-left: 1rem;
+  border-left: 3px solid #f96f26;
+  font-family: 'Catamaran', sans-serif;
+}
+
+@media screen and (max-width: 780px) {
+  .contactUs__containerCard {
+    display: flex;
+    flex-direction: column;
+    width: 90vw;
+    min-height: 100vh;
+  }
+  .contactUs__containerCardLeft {
+    flex: 1;
+    padding-bottom: 0.5rem;
+  }
+  .contactUs__containerCardRight {
+    flex: 1;
+  }
+  .faqContainer {
+    width: 100%;
+  }
+  .faqContainer > h1 {
+    font: size 1rem;
+  }
+}

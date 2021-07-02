@@ -1,0 +1,70 @@
+.achievements {
+  margin-top: 2rem;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.achievements > h2 {
+  font-size: 1.5rem;
+  color: #f96f26;
+  margin-bottom: 1rem;
+}
+
+.achievementsContainer {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid lightgray;
+}
+
+.achievementsContainer__content {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.achievementsContainer__content:last-child {
+  flex-direction: row-reverse;
+}
+
+.achievementsContainer__content > img {
+  width: 100%;
+  height: 40vh;
+  object-fit: cover;
+}
+
+.achievementsContainer__content > p {
+  text-align: justify;
+  margin-right: 2rem;
+}
+
+.achievementsContainer__content:last-child > p {
+  margin-left: 2rem;
+  margin-right: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .achievementsContainer__content {
+    flex-direction: column-reverse;
+  }
+  .achievementsContainer__content:last-child {
+    flex-direction: column-reverse;
+  }
+  .achievementsContainer__content > p {
+    margin-right: 0;
+  }
+  .content-css {
+    width: 100%;
+  }
+  .achievementsContainer__content:last-child > p {
+    margin-left: 0rem;
+  }
+}

@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;700&display=swap");
+
+* {
+  font-family: "Red Hat Display", sans-serif;
+}
+
+.departments {
+  margin: 2rem 0 0rem 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.departmentsContainer {
+  width: 90%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 2px solid gray;
+  padding-bottom: 1rem;
+}
+
+.departmentsContainer > h1 {
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  background: linear-gradient(90deg, #ff512f 0%, #f09819 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.departmentsContainer__cards {
+  margin-top: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 0 5rem;
+}
+
+.departmentsContainer__cardsLeft {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+
+.departmentsContainer__card {
+  width: 70%;
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  box-shadow: 0px 4px 4px 2px rgba(0, 0, 0, 0.3);
+  padding: 0px 0px 0px 15px;
+  margin-bottom: 2rem;
+  transition: transform 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.departmentsContainer__card:hover {
+  transform: scaleX(1.1);
+}
+
+.departmentsContainer__card > div {
+  height: 100%;
+  background-color: tomato;
+  width: 4px;
+}
+
+.departmentsContainer__cardsRight {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-end;
+}
+
+.departmentsContainer__card > h3 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  flex: 1;
+}
+
+.departmentsContainer__card > button {
+  padding: 20px;
+  border-radius: 0;
+}
+
+.departmentsContainer__card > button:hover {
+  background-color: #f77b23;
+}
+
+.departmentsContainer__card > button > .MuiIconButton-label > .MuiSvgIcon-root {
+  color: white;
+}
+
+@media screen and (max-width: 500px) {
+  .departmentsContainer {
+    width: 100%;
+  }
+  .departmentsContainer > h1 {
+    font-size: 1.2rem;
+  }
+  .departmentsContainer__cards {
+    padding: 0 1rem;
+    flex-direction: column;
+  }
+  .departmentsContainer__card {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  .departmentsContainer__cardsRight {
+    width: 95%;
+    justify-content: center;
+    align-items: center;
+  }
+  .departmentsContainer__cardsLeft {
+    width: 95%;
+    justify-content: center;
+    align-items: center;
+  }
+  .departmentsContainer {
+    width: 95%;
+  }
+}

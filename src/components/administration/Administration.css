@@ -1,0 +1,36 @@
+.administrationContainer,
+.administration {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+}
+
+.administrationContainer {
+  width: 90%;
+}
+
+.administration > h1 {
+  margin: 2rem 0;
+  font-size: 1.5rem;
+  position: relative;
+}
+
+.administration > h1::after {
+  position: absolute;
+  content: '';
+  margin-left: 2rem;
+  bottom: -2px;
+  width: 10vw;
+  border: 1px solid #2c5877;
+}
+
+.administration > h1::before {
+  position: absolute;
+  content: '';
+  left: -12.5vw;
+  bottom: -2px;
+  width: 10vw;
+  border: 1px solid #2c5877;
+}

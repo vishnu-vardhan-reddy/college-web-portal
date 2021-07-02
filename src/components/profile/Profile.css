@@ -1,0 +1,119 @@
+.profile {
+  width: 100vw;
+  min-height: calc(100vh - 80px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profileContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.profileContainer__left {
+  height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 0.35;
+  background-color: bisque;
+}
+
+.profileContainer__left > img {
+  height: 30vh;
+  object-fit: contain;
+  border: 2px solid rgb(219, 218, 218);
+  border-radius: 999px;
+}
+
+.profileContainer__left > h3 {
+  margin-top: 5px;
+  color: #2c3035;
+  font-size: 1.2rem;
+}
+
+.profileContainer__left > p {
+  letter-spacing: 1px;
+  margin: 5px 0;
+  font-size: 0.9rem;
+  color: #2c3035;
+}
+
+.profileContainer__leftSocial > .MuiSvgIcon-root {
+  margin: 6px 0 0 4px;
+  cursor: pointer;
+  font-size: 1.8rem;
+}
+
+.profileContainer__right-webkit-scrollbar {
+  width: auto;
+}
+
+.profileContainer__right {
+  flex: 0.65;
+  padding: 1rem;
+  max-height: calc(100vh - 80px);
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
+.profileContainer__rightContact {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  flex-direction: column;
+}
+
+.profileContainer__rightContact > h3 {
+  width: 13vw;
+  font-size: 1.2rem;
+  color: #2c3035;
+}
+
+.profile__contact {
+  margin-top: 0.7rem;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  width: 13vw;
+}
+
+.profile__contact > .MuiSvgIcon-root {
+  margin-right: 7px;
+  font-size: 1.4rem;
+}
+
+.profile__contact > p {
+  margin-left: 10px;
+  font-size: 0.9rem;
+}
+
+.profileContainer__rightAbout {
+  margin-top: 2rem;
+}
+
+.profileContainer__rightAbout > h3 {
+  color: #2c3035;
+  font-size: 1.2rem;
+}
+
+.profileContainer__rightAbout > p {
+  margin-left: 30px;
+  line-height: 25px;
+  margin-top: 10px;
+  text-align: justify;
+  font-size: 0.9rem;
+}
+
+.profileContainer__rightQualifications {
+  margin-left: 30px;
+  margin-top: 10px;
+}
+
+.profileContainer__rightQualifications > p {
+  line-height: 25px;
+  font-size: 0.9rem;
+}
