@@ -1,16 +1,19 @@
-import React from 'react'
-import './SyllabusAccordion.css'
-import { makeStyles } from '@material-ui/core/styles'
-import Accordion from '@material-ui/core/Accordion'
-import AccordionDetails from '@material-ui/core/AccordionDetails'
-import AccordionSummary from '@material-ui/core/AccordionSummary'
+import React from 'react';
+import './SyllabusAccordion.css';
+import { makeStyles } from '@material-ui/core/styles';
+import Accordion from '@material-ui/core/Accordion';
+import AccordionDetails from '@material-ui/core/AccordionDetails';
+import AccordionSummary from '@material-ui/core/AccordionSummary';
 // import span from '@material-ui/core/span'
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
-import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight'
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: '95vw',
+    width: '100vw',
+    [theme.breakpoints.up('sm')]: {
+      width: '60vw',
+    },
   },
   heading: {
     flexBasis: '33.33%',
@@ -19,15 +22,15 @@ const useStyles = makeStyles((theme) => ({
   secondaryHeading: {
     color: theme.palette.text.secondary,
   },
-}))
+}));
 
 export default function SyllabusAccordion() {
-  const classes = useStyles()
-  const [expanded, setExpanded] = React.useState(false)
+  const classes = useStyles();
+  const [expanded, setExpanded] = React.useState(false);
 
   const handleChange = (panel) => (event, isExpanded) => {
-    setExpanded(isExpanded ? panel : false)
-  }
+    setExpanded(isExpanded ? panel : false);
+  };
 
   return (
     <div className={classes.root}>
@@ -50,6 +53,7 @@ export default function SyllabusAccordion() {
           aria-controls='panel1bh-content'
           id='panel1bh-header'
         >
+          <AccordionHead expanded={expanded === 'panel1'} />
           <h3 className={classes.heading}>1st Year</h3>
           <span className={classes.secondaryHeading}>
             Click on semester to download
@@ -87,6 +91,8 @@ export default function SyllabusAccordion() {
           aria-controls='panel2bh-content'
           id='panel2bh-header'
         >
+          <AccordionHead expanded={expanded === 'panel2'} />
+
           <h3 className={classes.heading}>2nd Year</h3>
           <span className={classes.secondaryHeading}>
             Click on semester to download
@@ -124,6 +130,8 @@ export default function SyllabusAccordion() {
           aria-controls='panel3bh-content'
           id='panel3bh-header'
         >
+          <AccordionHead expanded={expanded === 'panel3'} />
+
           <h3 className={classes.heading}>3rd Year</h3>
           <span className={classes.secondaryHeading}>
             Click on semester to download
@@ -161,6 +169,7 @@ export default function SyllabusAccordion() {
           aria-controls='panel4bh-content'
           id='panel4bh-header'
         >
+          <AccordionHead expanded={expanded === 'panel4'} />
           <h3 className={classes.heading}>4th Year</h3>
           <span className={classes.secondaryHeading}>
             Click on semester to download
@@ -190,5 +199,16 @@ export default function SyllabusAccordion() {
         </AccordionDetails>
       </Accordion>
     </div>
-  )
+  );
 }
+
+const accordionPStyles = {
+  color: 'white',
+  fontSize: '1.2rem',
+};
+
+export const AccordionHead = ({ expanded }) => (
+  <div className='accordionHead'>
+    <p style={accordionPStyles}> {expanded ? '-' : '+'} </p>
+  </div>
+);

@@ -177,6 +177,7 @@
   margin: 5rem 0 2rem 0;
   color: #f96f26;
   padding-left: 1rem;
+  text-align: start;
   border-left: 3px solid #f96f26;
   font-family: 'Catamaran', sans-serif;
 }
@@ -190,10 +191,15 @@
   }
   .contactUs__containerCardLeft {
     flex: 1;
+    border-bottom-right-radius: 7px;
+    border-top-right-radius: 7px;
     padding-bottom: 0.5rem;
   }
   .contactUs__containerCardRight {
     flex: 1;
+    margin-top: 1rem;
+    border-bottom-left-radius: 7px;
+    border-top-left-radius: 7px;
   }
   .faqContainer {
     width: 100%;

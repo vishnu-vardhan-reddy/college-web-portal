@@ -60,9 +60,9 @@ function DropDown() {
                 onClick={() => setClick(false)}
               >
                 {item.title}
-                <i className='fas fa-caret-right' />
+                {/* <i className='fas fa-caret-right' /> */}
               </Link>
-              {isHover[index] && dropdown && (
+              {/* {isHover[index] && dropdown && (
                 <>
                   {console.log(index)}
                   <SubDropDown
@@ -71,7 +71,7 @@ function DropDown() {
                     department={item.path}
                   />
                 </>
-              )}
+              )} */}
             </li>
           ))}
         </ul>

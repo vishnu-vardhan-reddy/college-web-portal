@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
 .administrationContainer,
 .administration {
   display: flex;
@@ -15,6 +17,7 @@
   margin: 2rem 0;
   font-size: 1.5rem;
   position: relative;
+  font-family: 'Lobster', cursive;
 }
 
 .administration > h1::after {
@@ -29,6 +32,7 @@
 .administration > h1::before {
   position: absolute;
   content: '';
+  display: inline-block;
   left: -12.5vw;
   bottom: -2px;
   width: 10vw;

@@ -1,12 +1,4 @@
-.makeStyles-root-13 > h1 {
-  text-align: center;
-  font-size: 1.5rem;
-  margin: 2rem 0;
-  color: #f96f26;
-}
-
 .accordionHead {
-  margin-right: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -28,15 +20,5 @@
 @media screen and (max-width: 768px) {
   .MuiAccordionSummary-content > h3 {
     font-size: 1rem;
-  }
-
-  .accordionHead {
-    margin-right: 1rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 20px;
-    background-color: #f96f26;
-    padding: 3px 10px;
   }
 }

@@ -61,7 +61,7 @@ function Footer() {
       }
     }
     fetchData()
-  })
+  }, [])
 
   return (
     <div className='footer'>

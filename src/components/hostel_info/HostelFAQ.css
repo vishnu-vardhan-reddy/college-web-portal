@@ -1,0 +1,60 @@
+.accordionHead {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  background-color: #f96f26;
+  padding: 5px 15px;
+}
+
+.MuiAccordionSummary-root {
+  align-items: center !important;
+}
+
+.MuiAccordionSummary-content > h3 {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+}
+
+.hostelFAQ,
+.hostelFAQContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hostelFAQ {
+  margin-top: 2rem;
+  flex-direction: column;
+}
+
+.hostelFAQ > h1 {
+  font-size: 1.3rem;
+  color: #f96f26;
+  padding-left: 1rem;
+  text-align: start;
+  border-left: 3px solid #f96f26;
+  font-family: 'Catamaran', sans-serif;
+  margin-bottom: 1rem;
+}
+
+.hostelFAQContainer {
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .MuiAccordionSummary-content > h3 {
+    font-size: 0.825rem;
+  }
+  .hostelFAQContainer {
+    width: 100%;
+  }
+  .accordionHead {
+    padding: 5px 10px;
+    margin-right: 0.5rem;
+  }
+  .hostelFAQ > h1 {
+    font-size: 1.2rem;
+  }
+}

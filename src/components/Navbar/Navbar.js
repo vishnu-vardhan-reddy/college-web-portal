@@ -130,7 +130,7 @@ function Navbar() {
         <ul className={click ? 'nav-menu active' : 'nav-menu'}>
           <li className='nav-item'>
             <Link
-              to='/#home'
+              to='/'
               className='nav-links'
               onClick={closeMobileMenu}
               scroll={(el) => scrollWidthOffset(el)}

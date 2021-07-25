@@ -1,13 +1,13 @@
-import React, { useState } from 'react'
-import { MenuItems } from './MenuItems'
-import { Link } from 'react-router-dom'
-import './DropDown.css'
-import { SubMenuItems } from './SubMenuItems'
-import Fade from 'react-reveal/Fade'
+import React, { useState } from 'react';
+import { MenuItems } from './MenuItems';
+import { Link } from 'react-router-dom';
+import './DropDown.css';
+import { SubMenuItems } from './SubMenuItems';
+import Fade from 'react-reveal/Fade';
 
 function CampusDropDown() {
-  const [click, setClick] = useState(false)
-  const handleClick = () => setClick(!click)
+  const [click, setClick] = useState(false);
+  const handleClick = () => setClick(!click);
 
   return (
     <>
@@ -46,7 +46,7 @@ function CampusDropDown() {
           <li>
             <Link
               className='dropdown-link'
-              to='/'
+              to='/library'
               onClick={() => setClick(false)}
             >
               Library
@@ -64,7 +64,7 @@ function CampusDropDown() {
         </ul>
       </Fade>
     </>
-  )
+  );
 }
 
-export default CampusDropDown
+export default CampusDropDown;

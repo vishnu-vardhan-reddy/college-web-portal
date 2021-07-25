@@ -54,13 +54,14 @@
 
 .profileContainer__right {
   flex: 0.65;
+  direction: rtl;
   padding: 1rem;
-  max-height: calc(100vh - 80px);
-  overflow-y: scroll;
-  scroll-behavior: smooth;
+  height: 500px;
+  overflow: auto;
 }
 
 .profileContainer__rightContact {
+  direction: ltr;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
@@ -93,6 +94,7 @@
 
 .profileContainer__rightAbout {
   margin-top: 2rem;
+  direction: ltr;
 }
 
 .profileContainer__rightAbout > h3 {

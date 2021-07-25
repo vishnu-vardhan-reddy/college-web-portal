@@ -7,26 +7,39 @@
   font-family: 'Red Hat Display', sans-serif;
 }
 
+html,
+body {
+  overflow: initial !important;
+}
+
 a,
 span {
   font-family: 'Red Hat Display', sans-serif;
   text-decoration: none;
 }
 
+* {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+::-webkit-scrollbar-thumb {
+  background-image: linear-gradient(to bottom, #ff2600, #ff9100);
+  border-radius: 6px;
+}
+
 ::-webkit-scrollbar {
-  display: none;
+  width: 8px;
+  height: 0px;
 }
 
-.app {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+::-moz-selection {
+  /* Code for Firefox */
+  color: rgb(173, 172, 169);
+  background: rgb(32, 32, 32);
 }
 
-.app::-webkit-scrollbar {
-  display: none;
-}
-
-.app {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+::selection {
+  color: rgb(173, 172, 169);
+  background: rgb(32, 32, 32);
 }

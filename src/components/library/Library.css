@@ -1,23 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Gentium+Basic&family=Proza+Libre&family=Titillium+Web&display=swap');
 
-.departmentContainer,
-.department {
+.libraryContainer,
+.library {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  overflow-x: hidden;
+  width: 100vw;
 }
 
-.department > h1 {
+.libraryContainer {
+  width: 95%;
+}
+
+.library > h1 {
   margin: 2rem 0;
   font-size: 1.5rem;
   position: relative;
   font-family: 'Lobster', cursive;
 }
 
-.department > h1::after {
+.library > h1::after {
   position: absolute;
   content: '';
   margin-left: 2rem;
@@ -26,7 +30,7 @@
   border: 1px solid #2c5877;
 }
 
-.department > h1::before {
+.library > h1::before {
   position: absolute;
   content: '';
   display: inline-block;
@@ -36,20 +40,16 @@
   border: 1px solid #2c5877;
 }
 
-#syllabus {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.libraryContainer > img {
+  width: 100%;
 }
 
-@media screen and (max-width: 780px) {
-  .department > h1 {
-    margin: 2rem 0;
-    font-size: 1.3rem;
-    position: relative;
-  }
-  .department > h1::after,
-  h1::before {
-    display: none;
-  }
+.libraryContainer__content {
+  margin: 1rem 0;
+}
+
+.libraryContainer__content > p {
+  margin-bottom: 0.5rem;
+  text-align: justify;
+  font-family: 'Titillium Web', sans-serif;
 }

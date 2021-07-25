@@ -26,6 +26,7 @@
 }
 
 .aboutContainer > p {
+  font-family: 'Titillium Web', sans-serif;
   letter-spacing: 1px;
   line-height: 24px;
   color: rgb(5, 49, 34);

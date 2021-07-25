@@ -38,6 +38,10 @@
   -webkit-transform: rotate(135deg);
 }*/
 
+.hero-section {
+  overflow-x: hidden;
+}
+
 .carousal__item > img {
   height: calc(100vh - 80px);
   opacity: 0.8;

@@ -1,0 +1,67 @@
+.directorMessage {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.directorMessageContainer {
+  width: 90%;
+  text-align: justify;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid gray;
+}
+
+.directorMessageContainer > h2 {
+  text-align: center;
+  flex: 1;
+  font-family: 'Red Hat Display', sans-serif;
+  margin: 2rem 0;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+  background: linear-gradient(90deg, #ff512f 0%, #f09819 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.directorMessageContainer__bottom {
+  display: flex;
+}
+
+.directorMessageContainer__bottom > .image {
+  width: 30%;
+  /* border: 1px solid darkgray; */
+  /* height: 100%; */
+}
+
+.directorMessageContainer__message {
+  padding: 2rem;
+  margin-left: 1rem;
+}
+
+.directorMessageContainer__message > p {
+  line-height: 30px;
+}
+
+.directorMessageContainer__message > .director__name {
+  margin-top: 20px;
+  text-align: right;
+}
+
+@media screen and (max-width: 700px) {
+  .directorMessageContainer__bottom {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .directorMessageContainer > h2 {
+    font-size: 1.25rem;
+  }
+
+  .directorMessageContainer__bottom > .image {
+    width: 60%;
+  }
+}

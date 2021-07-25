@@ -1,14 +1,15 @@
-import './App.css'
-import Navbar from './components/Navbar/Navbar'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import Home from './components/home/Home'
-import Footer from './components/footer/Footer'
-import Department from './components/department page/Department'
-import Profile from './components/profile/Profile'
-import Administration from './components/administration/Administration'
-import ScrollToTop from './ScrollToTop'
-import ContactUs from './components/contact/ContactUs'
-import Hostel from './components/hostel_info/Hostel'
+import './App.css';
+import Navbar from './components/Navbar/Navbar';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Home from './components/home/Home';
+import Footer from './components/footer/Footer';
+import Department from './components/department page/Department';
+import Profile from './components/profile/Profile';
+import Administration from './components/administration/Administration';
+import ScrollToTop from './ScrollToTop';
+import ContactUs from './components/contact/ContactUs';
+import Hostel from './components/hostel_info/Hostel';
+import Library from './components/library/Library';
 
 function App() {
   return (
@@ -32,6 +33,9 @@ function App() {
             <Route exact={true} path='/contact-us'>
               <ContactUs />
             </Route>
+            <Route exact={true} path='/library'>
+              <Library />
+            </Route>
             <Route exact={true} path='/hostels'>
               <Hostel />
             </Route>
@@ -40,7 +44,7 @@ function App() {
         </ScrollToTop>
       </Router>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

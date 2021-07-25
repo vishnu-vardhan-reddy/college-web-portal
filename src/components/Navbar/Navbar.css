@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&display=swap');
 
 .navbar {
   background: #f96f26;
@@ -53,12 +54,12 @@
   font-size: 0.7rem;
   display: flex;
   justify-content: space-evenly;
-  font-family: "Red Hat Display", sans-serif;
+  font-family: 'Red Hat Display', sans-serif;
   align-items: center;
 }
 
 .navbar__email > p {
-  font-family: "Red Hat Display", sans-serif;
+  font-family: 'Red Hat Display', sans-serif;
 }
 
 .borderRight {
@@ -72,13 +73,13 @@
   font-size: 0.7rem;
   display: flex;
   justify-content: space-evenly;
-  font-family: "Red Hat Display", sans-serif;
+  font-family: 'Red Hat Display', sans-serif;
 
   align-items: center;
 }
 
 .navbar__tollNo > p {
-  font-family: "Red Hat Display", sans-serif;
+  font-family: 'Red Hat Display', sans-serif;
 }
 
 .fa-firstdraft {
@@ -104,13 +105,14 @@
 }
 
 .nav-links {
-  color: white;
+  color: #fefefe;
   text-decoration: none;
   font-weight: 400;
   font-size: 1rem;
   padding: 1.2rem 0.5rem;
   transition: transform 0.2s ease-in-out;
-  font-family: "Red Hat Display", sans-serif;
+  /* font-family: 'Red Hat Display', sans-serif; */
+  font-family: 'Lato', sans-serif;
 }
 
 .nav-links:hover {

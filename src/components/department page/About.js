@@ -1,12 +1,12 @@
-import React from "react";
-import "./About.css";
-import image from "./DepartmentImage.jpg";
+import React from 'react';
+import './About.css';
+import image from './DepartmentImage.jpg';
 
 function About() {
   return (
-    <div className="about">
-      <div className="aboutContainer">
-        <img src={image} />
+    <div className='about'>
+      <div className='aboutContainer'>
+        <img src={image} alt='about_image' />
         <h2>About</h2>
         <p>
           One of the most sought after courses amongst engineering students,

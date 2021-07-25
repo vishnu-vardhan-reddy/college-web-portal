@@ -1,12 +1,11 @@
 import React from 'react';
-import './FaqAccordion.css';
+import './HomeFAQ.css';
 import { makeStyles } from '@material-ui/core/styles';
 import Accordion from '@material-ui/core/Accordion';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
 import AccordionSummary from '@material-ui/core/AccordionSummary';
-// import span from '@material-ui/core/span'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import { contactFAQData } from './data';
+import { homeFAQData } from './data';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -25,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function FaqAccordion() {
+export default function HomeFAQ() {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
 
@@ -34,26 +33,31 @@ export default function FaqAccordion() {
   };
 
   return (
-    <div className={classes.root}>
-      {contactFAQData.map((faq, idx) => (
-        <Accordion
-          key={idx}
-          expanded={expanded === 'panel' + idx}
-          onChange={handleChange('panel' + idx)}
-        >
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
-            aria-controls={'panel1bh-content' + idx}
-            id={'panel1bh-header' + idx}
-          >
-            <AccordionHead expanded={expanded === 'panel' + idx} />
-            <h3 className={classes.heading}>{faq.question}</h3>
-          </AccordionSummary>
-          <AccordionDetails>
-            <span className={classes.span}>{faq.answer}</span>
-          </AccordionDetails>
-        </Accordion>
-      ))}
+    <div className='homeFAQ'>
+      <h1>FREQUENTLY ASKED QUESTIONS</h1>
+      <div className='homeFAQContainer'>
+        <div className={classes.root}>
+          {homeFAQData.map((faq, idx) => (
+            <Accordion
+              key={idx}
+              expanded={expanded === 'panel' + idx}
+              onChange={handleChange('panel' + idx)}
+            >
+              <AccordionSummary
+                expandIcon={<ExpandMoreIcon />}
+                aria-controls={'panel1bh-content' + idx}
+                id={'panel1bh-header' + idx}
+              >
+                <AccordionHead expanded={expanded === 'panel' + idx} />
+                <h3 className={classes.heading}>{faq.question}</h3>
+              </AccordionSummary>
+              <AccordionDetails>
+                <span className={classes.span}>{faq.answer}</span>
+              </AccordionDetails>
+            </Accordion>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
@@ -68,3 +72,5 @@ export const AccordionHead = ({ expanded }) => (
     <p style={accordionPStyles}> {expanded ? '-' : '+'} </p>
   </div>
 );
+
+// fa fa-question-circle-o mr-10
