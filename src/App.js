@@ -10,6 +10,8 @@ import ScrollToTop from './ScrollToTop';
 import ContactUs from './components/contact/ContactUs';
 import Hostel from './components/hostel_info/Hostel';
 import Library from './components/library/Library';
+import Academics from './components/academic_calender/Academics';
+import MoreLinks from './components/more_links/MoreLinks';
 
 function App() {
   return (
@@ -38,6 +40,12 @@ function App() {
             </Route>
             <Route exact={true} path='/hostels'>
               <Hostel />
+            </Route>
+            <Route exact={true} path='/academics'>
+              <Academics />
+            </Route>
+            <Route exact={true} path='/more-links'>
+              <MoreLinks />
             </Route>
           </Switch>
           <Footer />

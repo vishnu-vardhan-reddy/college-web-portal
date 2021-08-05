@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gentium+Basic&family=Proza+Libre&family=Titillium+Web&display=swap');
+
+.academicsContainer,
+.academics {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+}
+
+.academicsContainer {
+  width: 95%;
+}
+
+.academics > h1 {
+  margin: 2rem 0;
+  font-size: 1.5rem;
+  position: relative;
+  font-family: 'Lobster', cursive;
+}
+
+.academics > img {
+  width: 95%;
+  height: 60vh;
+  object-fit: cover;
+}
+
+.academics > h1::after {
+  position: absolute;
+  content: '';
+  margin-left: 2rem;
+  bottom: -2px;
+  width: 10vw;
+  border: 1px solid #2c5877;
+}
+
+.academics > h1::before {
+  position: absolute;
+  content: '';
+  display: inline-block;
+  left: -12.5vw;
+  bottom: -2px;
+  width: 10vw;
+  border: 1px solid #2c5877;
+}

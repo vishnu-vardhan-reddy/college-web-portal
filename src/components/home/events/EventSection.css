@@ -115,12 +115,13 @@
   margin-bottom: 1.3rem;
 }
 
-.important__links > p {
+.important__links > a {
   font-family: 'Red Hat Display', sans-serif;
   letter-spacing: 1px;
   margin-left: 1.5rem;
   border-bottom: 1px solid rgba(0, 0, 0, 0.5);
   cursor: pointer;
+  color: black;
 }
 
 .eventSectionContainer__right {

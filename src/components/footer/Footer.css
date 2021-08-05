@@ -36,7 +36,7 @@
   content: '';
   bottom: 0;
   width: 2vw;
-  border-bottom: 3px solid #f77a23;
+  /* border-bottom: 3px solid #f77a23; */
 }
 
 .footer__topLine > span {

@@ -1,108 +1,108 @@
-import React, { useState } from 'react'
-import './Navbar.css'
-import { NavHashLink as Link } from 'react-router-hash-link'
-import DropDown from './DropDown'
-import collegeLogo from './collegeLogo.svg'
-import AcademicsDropDown from './AcademicsDropDown'
-import CampusDropDown from './CampusDropDown'
-import AdministrativeDropDown from './AdministrativeDropDown'
-import AboutDropDown from './AboutDropDown'
+import React, { useState } from 'react';
+import './Navbar.css';
+import { NavHashLink as Link } from 'react-router-hash-link';
+import DropDown from './DropDown';
+import collegeLogo from './collegeLogo.svg';
+import AcademicsDropDown from './AcademicsDropDown';
+import CampusDropDown from './CampusDropDown';
+import AdministrativeDropDown from './AdministrativeDropDown';
+import AboutDropDown from './AboutDropDown';
 
 function Navbar() {
-  const [click, setClick] = useState(false)
-  const [departmentDropdown, setDepartmentDropdown] = useState(false)
-  const [academicsDropdown, setAcademicsDropdown] = useState(false)
-  const [campusDropdown, setCampusDropdown] = useState(false)
-  const [administrationDropdown, setAdministrationDropdown] = useState(false)
-  const [aboutDropdown, setAboutDropdown] = useState(false)
+  const [click, setClick] = useState(false);
+  const [departmentDropdown, setDepartmentDropdown] = useState(false);
+  const [academicsDropdown, setAcademicsDropdown] = useState(false);
+  const [campusDropdown, setCampusDropdown] = useState(false);
+  const [administrationDropdown, setAdministrationDropdown] = useState(false);
+  const [aboutDropdown, setAboutDropdown] = useState(false);
 
-  const closeMobileMenu = () => setClick(false)
+  const closeMobileMenu = () => setClick(false);
 
   const onMouseEnterDep = () => {
     if (window.innerWidth < 960) {
-      setDepartmentDropdown(false)
+      setDepartmentDropdown(false);
     } else {
-      setDepartmentDropdown(true)
+      setDepartmentDropdown(true);
     }
-  }
+  };
 
   const onMouseLeaveDep = () => {
     if (window.innerWidth < 960) {
-      setDepartmentDropdown(false)
+      setDepartmentDropdown(false);
     } else {
-      setDepartmentDropdown(false)
+      setDepartmentDropdown(false);
     }
-  }
+  };
 
   const onMouseEnterAcademics = () => {
     if (window.innerWidth < 960) {
-      setAcademicsDropdown(false)
+      setAcademicsDropdown(false);
     } else {
-      setAcademicsDropdown(true)
+      setAcademicsDropdown(true);
     }
-  }
+  };
 
   const onMouseLeaveAcademics = () => {
     if (window.innerWidth < 960) {
-      setAcademicsDropdown(false)
+      setAcademicsDropdown(false);
     } else {
-      setAcademicsDropdown(false)
+      setAcademicsDropdown(false);
     }
-  }
+  };
 
   const onMouseEnterCampus = () => {
     if (window.innerWidth < 960) {
-      setCampusDropdown(false)
+      setCampusDropdown(false);
     } else {
-      setCampusDropdown(true)
+      setCampusDropdown(true);
     }
-  }
+  };
 
   const onMouseLeaveCampus = () => {
     if (window.innerWidth < 960) {
-      setCampusDropdown(false)
+      setCampusDropdown(false);
     } else {
-      setCampusDropdown(false)
+      setCampusDropdown(false);
     }
-  }
+  };
 
   const onMouseEnterAdministration = () => {
     if (window.innerWidth < 960) {
-      setAdministrationDropdown(false)
+      setAdministrationDropdown(false);
     } else {
-      setAdministrationDropdown(true)
+      setAdministrationDropdown(true);
     }
-  }
+  };
 
   const onMouseLeaveAdministration = () => {
     if (window.innerWidth < 960) {
-      setAdministrationDropdown(false)
+      setAdministrationDropdown(false);
     } else {
-      setAdministrationDropdown(false)
+      setAdministrationDropdown(false);
     }
-  }
+  };
 
   const onMouseEnterAbout = () => {
     if (window.innerWidth < 960) {
-      setAboutDropdown(false)
+      setAboutDropdown(false);
     } else {
-      setAboutDropdown(true)
+      setAboutDropdown(true);
     }
-  }
+  };
 
   const onMouseLeaveAbout = () => {
     if (window.innerWidth < 960) {
-      setAboutDropdown(false)
+      setAboutDropdown(false);
     } else {
-      setAboutDropdown(false)
+      setAboutDropdown(false);
     }
-  }
+  };
 
   const scrollWidthOffset = (el) => {
-    const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset
-    const yOffset = -80
-    window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' })
-  }
+    const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
+    const yOffset = -80;
+    window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' });
+  };
 
   return (
     <>
@@ -234,7 +234,7 @@ function Navbar() {
         </ul>
       </nav>
     </>
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;

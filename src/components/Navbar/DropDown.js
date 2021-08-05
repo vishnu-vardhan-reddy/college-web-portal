@@ -1,14 +1,14 @@
-import React, { useState } from 'react'
-import { MenuItems } from './MenuItems'
-import { Link } from 'react-router-dom'
-import './DropDown.css'
-import SubDropDown from './SubDropDown'
-import { SubMenuItems } from './SubMenuItems'
-import Fade from 'react-reveal/Fade'
+import React, { useState } from 'react';
+import { MenuItems } from './MenuItems';
+import { Link } from 'react-router-dom';
+import './DropDown.css';
+// import SubDropDown from './SubDropDown'
+// import { SubMenuItems } from './SubMenuItems'
+import Fade from 'react-reveal/Fade';
 
 function DropDown() {
-  const [click, setClick] = useState(false)
-  const [dropdown, setDropdown] = useState(false)
+  const [click, setClick] = useState(false);
+  const [dropdown, setDropdown] = useState(false);
   const [isHover, setIsHover] = useState([
     false,
     false,
@@ -16,30 +16,30 @@ function DropDown() {
     false,
     false,
     false,
-  ])
-  const handleClick = () => setClick(!click)
+  ]);
+  const handleClick = () => setClick(!click);
 
   const onMouseEnter = (index) => {
     if (window.innerWidth < 960) {
-      setDropdown(false)
+      setDropdown(false);
     } else {
-      setDropdown(true)
-      let hover = isHover
-      hover[index] = true
-      setIsHover({ ...isHover, hover })
+      setDropdown(true);
+      let hover = isHover;
+      hover[index] = true;
+      setIsHover({ ...isHover, hover });
     }
-  }
+  };
 
   const onMouseLeave = (index) => {
     if (window.innerWidth < 960) {
-      setDropdown(false)
+      setDropdown(false);
     } else {
-      setDropdown(false)
-      let hover = isHover
-      hover[index] = false
-      setIsHover({ ...isHover, hover })
+      setDropdown(false);
+      let hover = isHover;
+      hover[index] = false;
+      setIsHover({ ...isHover, hover });
     }
-  }
+  };
   return (
     <>
       <Fade>
@@ -77,7 +77,7 @@ function DropDown() {
         </ul>
       </Fade>
     </>
-  )
+  );
 }
 
-export default DropDown
+export default DropDown;

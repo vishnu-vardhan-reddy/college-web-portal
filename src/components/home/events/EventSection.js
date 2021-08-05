@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './EventSection.css';
 import arrow from './arrow.svg';
 import Button from '@material-ui/core/Button';
 import { ThemeProvider } from '@material-ui/styles';
 import { createMuiTheme } from '@material-ui/core/styles';
 import SendIcon from '@material-ui/icons/Send';
+import { useHistory } from 'react-router-dom';
+import { impLinksResponse } from '../../utils/api';
 
 const theme = createMuiTheme({
   palette: {
@@ -18,6 +20,22 @@ const theme = createMuiTheme({
 });
 
 function EventSection() {
+  const [threeLinks, setThreeLinks] = useState([]);
+  const history = useHistory();
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const result = await impLinksResponse();
+        if (result) {
+          setThreeLinks(result.slice(0, 3));
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    })();
+  }, []);
+
   return (
     <div className='eventSection' id='aboutus'>
       <div className='eventSectionTopBorder'></div>
@@ -41,18 +59,14 @@ function EventSection() {
           </Button>
           <div className='eventSectionContainer__LeftBottom'>
             <h2>Important Links</h2>
-            <div className='important__links'>
-              <img src={arrow} alt='arrrow' />
-              <p>semester hallticket download for final year</p>
-            </div>
-            <div className='important__links'>
-              <img src={arrow} alt='arrrow' />
-              <p>semester hallticket download for final year</p>
-            </div>
-            <div className='important__links'>
-              <img src={arrow} alt='arrrow' />
-              <p>semester hallticket download for final year</p>
-            </div>
+            {threeLinks.map(({ link, id, description }) => (
+              <div className='important__links' key={id}>
+                <img src={arrow} alt='arrrow' />
+                <a href={link} target='_blank' rel='noreferrer'>
+                  {description}
+                </a>
+              </div>
+            ))}
           </div>
           <ThemeProvider theme={theme}>
             <Button
@@ -60,6 +74,7 @@ function EventSection() {
               color='secondary'
               endIcon={<SendIcon />}
               className='more__links'
+              onClick={() => history.push('/more-links')}
             >
               More Links
             </Button>

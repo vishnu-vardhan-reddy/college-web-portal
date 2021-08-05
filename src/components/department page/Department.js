@@ -1,13 +1,13 @@
-import React, { useEffect } from 'react'
-import './Department.css'
-import About from './About'
-import Faculty from './Faculty'
-import Laboratory from './Laboratory'
-import Acheivements from './Acheivements'
-import { useHistory, useParams } from 'react-router-dom'
-import smoothscroll from 'smoothscroll-polyfill'
-import SyllabusAccordion from './../utils/SyllabusAccordion'
-import { departmentResponse } from './../utils/api'
+import React, { useEffect } from 'react';
+import './Department.css';
+import About from './About';
+import Faculty from './Faculty';
+import Laboratory from './Laboratory';
+import Acheivements from './Acheivements';
+import { useHistory, useParams } from 'react-router-dom';
+import smoothscroll from 'smoothscroll-polyfill';
+import SyllabusAccordion from './../utils/SyllabusAccordion';
+import { departmentResponse } from './../utils/api';
 
 function Department() {
   // const history = useHistory();
@@ -20,25 +20,25 @@ function Department() {
   //   }
   // }, [history.location.hash]);
 
-  let { departmentId } = useParams()
+  let { departmentId } = useParams();
 
   useEffect(() => {
-    ;(async () => {
+    (async () => {
       try {
-        const response = await departmentResponse(departmentId)
+        const response = await departmentResponse(departmentId);
         if (response) {
-          console.log(response)
+          console.log(response);
         }
       } catch (err) {
-        console.log(err)
+        console.log(err.response);
       }
-    })()
-  })
+    })();
+  });
 
   useEffect(() => {
-    smoothscroll.polyfill()
-    window.__forceSmoothScrollPolyfill__ = true
-  })
+    smoothscroll.polyfill();
+    window.__forceSmoothScrollPolyfill__ = true;
+  });
 
   return (
     <div className='department'>
@@ -61,7 +61,7 @@ function Department() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default Department
+export default Department;

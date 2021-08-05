@@ -6,7 +6,7 @@
   border-radius: 10px;
   background: linear-gradient(45deg, #ffffff, #f0efef);
   box-shadow: 7px -7px 14px #fffbfb, -7px 7px 14px #ffffff;
-  width: 22vw;
+  min-width: 22vw;
   margin-top: 5rem;
 }
 
@@ -73,4 +73,28 @@
 
 .executiveCardContainer > button > .MuiButton-label {
   color: #f60c0c;
+}
+
+@media screen and (max-width: 780px) and (min-width: 401px) {
+  .executiveCard {
+    padding: 0 5px;
+  }
+  .executiveCard > img {
+    width: 6rem;
+  }
+  .executiveCard h3 {
+    font-size: 0.825rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .executiveCard {
+    min-width: 80vw;
+  }
+  .executiveCard > img {
+    width: 6rem;
+  }
+  .executiveCard h3 {
+    font-size: 0.825rem;
+  }
 }

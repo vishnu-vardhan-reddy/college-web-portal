@@ -1,15 +1,31 @@
-import axios from './../../Axios'
+import axios from './../../Axios';
 
 export const departmentResponse = async (id) => {
   try {
     const result = await axios({
       method: 'get',
       url: `/departments/${id}`,
-    })
+    });
     if (result) {
-      return result.data
+      console.log(result);
+      return result.data;
     }
   } catch (error) {
-    return error
+    throw error;
   }
-}
+};
+
+export const impLinksResponse = async (id) => {
+  try {
+    const result = await axios({
+      method: 'get',
+      url: `/link`,
+    });
+    if (result) {
+      console.log(result);
+      return result.data;
+    }
+  } catch (error) {
+    throw error;
+  }
+};

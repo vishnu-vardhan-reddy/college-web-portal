@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gentium+Basic&family=Proza+Libre&family=Titillium+Web&display=swap');
+
+.classSchedule {
+  width: 100vw;
+}
+
+.classScheduleContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 95%;
+}
+
+.classSchedule > h1 {
+  margin: 2rem 0 1.5rem 2rem;
+  font-size: 1.3rem;
+  position: relative;
+  color: #6b6b6b;
+}
+
+.tableContainer {
+  width: 80% !important;
+}
+
+@media screen and (max-width: 780px) {
+  .tableContainer {
+    width: 100% !important;
+  }
+}

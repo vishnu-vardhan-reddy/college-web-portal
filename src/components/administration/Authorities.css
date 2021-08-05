@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;700&display=swap');
 
 .authoritiesContainer,
 .authorities {
@@ -36,6 +36,7 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .authorities__executiveCouncil {
@@ -44,6 +45,9 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  margin-top: -3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #4c7481;
 }
 
 .authorities__executiveCouncil > h3 {
@@ -61,6 +65,9 @@
 
 .principal__dean {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
   margin-top: 3rem;
 }
 
@@ -74,4 +81,10 @@
 .principal > h3 {
   margin-bottom: 5rem;
   color: #1f609a;
+}
+
+@media screen and (max-width: 768px) {
+  .authoritiesContainer > h2 {
+    font-size: 1rem;
+  }
 }

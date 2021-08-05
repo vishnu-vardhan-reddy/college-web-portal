@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gentium+Basic&family=Proza+Libre&family=Titillium+Web&display=swap');
+
+.moreLinks {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.moreLinksContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 95%;
+}
+
+.moreLinks > h1 {
+  margin: 2rem 0;
+  letter-spacing: 1px;
+  font-size: 1.5rem;
+  position: relative;
+  font-family: 'Lobster', cursive;
+  color: #6b6b6b;
+}
+
+.moreLinks > h1::after {
+  position: absolute;
+  content: '';
+  margin-left: 2rem;
+  bottom: -2px;
+  width: 10vw;
+  border: 1px solid #2c5877;
+}
+
+.moreLinks > h1::before {
+  position: absolute;
+  content: '';
+  display: inline-block;
+  left: -12.5vw;
+  bottom: -2px;
+  width: 10vw;
+  border: 1px solid #2c5877;
+}
+
+.tableContainer {
+  width: 80% !important;
+}
+
+@media screen and (max-width: 780px) {
+  .tableContainer {
+    width: 100vw !important;
+  }
+}

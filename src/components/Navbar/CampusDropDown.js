@@ -52,7 +52,7 @@ function CampusDropDown() {
               Library
             </Link>
           </li>
-          <li>
+          {/* <li>
             <Link
               className='dropdown-link'
               to='/'
@@ -60,7 +60,7 @@ function CampusDropDown() {
             >
               Alumni
             </Link>
-          </li>
+          </li> */}
         </ul>
       </Fade>
     </>
