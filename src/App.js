@@ -12,6 +12,7 @@ import Hostel from './components/hostel_info/Hostel';
 import Library from './components/library/Library';
 import Academics from './components/academic_calender/Academics';
 import MoreLinks from './components/more_links/MoreLinks';
+import AboutCollege from './components/about_college/AboutCollege';
 
 function App() {
   return (
@@ -46,6 +47,9 @@ function App() {
             </Route>
             <Route exact={true} path='/more-links'>
               <MoreLinks />
+            </Route>
+            <Route exact={true} path='/about-college'>
+              <AboutCollege />
             </Route>
           </Switch>
           <Footer />

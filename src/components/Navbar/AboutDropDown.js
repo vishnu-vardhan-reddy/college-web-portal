@@ -16,13 +16,15 @@ function AboutDropDown() {
           className={click ? 'dropdown-menu clicked' : 'dropdown-menu'}
         >
           <li>
-            <Link
+            <a
               className='dropdown-link'
-              to='/'
+              href='http://www.yogivemanauniversity.ac.in/'
+              target='_blank'
+              rel='noreferrer'
               onClick={() => setClick(false)}
             >
               About University
-            </Link>
+            </a>
           </li>
           {/* <li>
             <Link
@@ -36,7 +38,7 @@ function AboutDropDown() {
           <li>
             <Link
               className='dropdown-link'
-              to='/'
+              to='/about-college'
               onClick={() => setClick(false)}
             >
               About College

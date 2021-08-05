@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './SemesterSchedule.css';
 import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
@@ -9,6 +9,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import { semesterSchedule } from '../data';
+import { semesterScheduleResponse } from '../api';
 
 const useStyles = makeStyles({
   table: {
@@ -26,7 +27,24 @@ const useStyles = makeStyles({
 });
 
 export default function SemesterSchedule() {
+  const [semesterSchedules, setsemesterSchedules] = useState([]);
   const classes = useStyles();
+
+  useEffect(() => {
+    const ac = new AbortController();
+    (async () => {
+      try {
+        const result = await semesterScheduleResponse();
+        if (result) {
+          console.log(result);
+          setsemesterSchedules(result);
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    })();
+    return ac.abort();
+  }, []);
 
   return (
     <div className='semesterSchedule'>
@@ -48,13 +66,15 @@ export default function SemesterSchedule() {
               </TableRow>
             </TableHead>
             <TableBody>
-              {semesterSchedule.map((row) => (
+              {semesterSchedules?.map((row) => (
                 <TableRow key={row.name}>
                   <TableCell component='th' scope='row'>
-                    {row.examInfo}
+                    <a href={row.schedule} target='_blank' rel='noreferrer'>
+                      {row.examInfo ? row.examInfo : 'some description'}
+                    </a>
                   </TableCell>
-                  <TableCell align='center'>{row.academicYear}</TableCell>
-                  <TableCell align='right'>{row.examDate}</TableCell>
+                  <TableCell align='center'>{row.academic_year}</TableCell>
+                  <TableCell align='right'>{row.posted_on}</TableCell>
                 </TableRow>
               ))}
             </TableBody>

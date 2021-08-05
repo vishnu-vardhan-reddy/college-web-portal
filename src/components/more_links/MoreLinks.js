@@ -35,7 +35,7 @@ function MoreLinks() {
       try {
         const result = await impLinksResponse();
         if (result) {
-          setLinks(result);
+          setLinks(result.reverse());
         }
       } catch (error) {
         console.log(error);

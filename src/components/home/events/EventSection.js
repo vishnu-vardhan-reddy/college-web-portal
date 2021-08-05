@@ -28,7 +28,7 @@ function EventSection() {
       try {
         const result = await impLinksResponse();
         if (result) {
-          setThreeLinks(result.slice(0, 3));
+          setThreeLinks(result.reverse().slice(0, 3));
         }
       } catch (error) {
         console.log(error);
