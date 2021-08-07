@@ -6,28 +6,21 @@ import Carousel, { Modal, ModalGateway } from 'react-images';
 import SendIcon from '@material-ui/icons/Send';
 import { Button } from '@material-ui/core';
 import { photosResponse } from '../../utils/api';
-import { photosSet } from './photos';
 import { useHistory } from 'react-router-dom';
+import { setPhotoSize } from './../../utils/setPhotoSize';
 
-function PhotoGallery() {
+function PhotoGallery({ images }) {
   const [photos, setPhotos] = useState([]);
+  console.log(photos);
+
   const [currentImage, setCurrentImage] = useState(0);
   const [viewerIsOpen, setViewerIsOpen] = useState(false);
 
   const history = useHistory();
 
   useEffect(() => {
-    (async () => {
-      try {
-        const res = await photosResponse();
-        if (res) {
-          setPhotos(photosSet(res));
-        }
-      } catch (error) {
-        console.log(error.response);
-      }
-    })();
-  }, []);
+    setPhotos(setPhotoSize(images));
+  }, [images]);
 
   const openLightbox = useCallback((event, { photo, index }) => {
     setCurrentImage(index);

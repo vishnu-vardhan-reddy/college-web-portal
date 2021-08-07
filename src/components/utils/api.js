@@ -29,3 +29,48 @@ export const impLinksResponse = async (id) => {
     throw error;
   }
 };
+
+export const photosResponse = async () => {
+  try {
+    const result = await axios({
+      method: 'get',
+      url: `/gallery`,
+    });
+    if (result) {
+      console.log(result);
+      return result.data;
+    }
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const upcomingEventsResponse = async () => {
+  try {
+    const result = await axios({
+      method: 'get',
+      url: `/get-upcomingevents`,
+    });
+    if (result) {
+      console.log(result);
+      return result.data;
+    }
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const recentEventsResponse = async () => {
+  try {
+    const result = await axios({
+      method: 'get',
+      url: `/get-recentevents`,
+    });
+    if (result) {
+      console.log(result);
+      return result.data;
+    }
+  } catch (error) {
+    throw error;
+  }
+};

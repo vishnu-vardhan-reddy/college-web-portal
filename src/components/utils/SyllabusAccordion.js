@@ -14,6 +14,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('sm')]: {
       width: '60vw',
     },
+    paddingBottom: '2rem',
   },
   heading: {
     flexBasis: '33.33%',

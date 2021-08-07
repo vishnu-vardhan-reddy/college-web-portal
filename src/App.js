@@ -13,6 +13,7 @@ import Library from './components/library/Library';
 import Academics from './components/academic_calender/Academics';
 import MoreLinks from './components/more_links/MoreLinks';
 import AboutCollege from './components/about_college/AboutCollege';
+import GalleryComponent from './components/gallery_page/Gallery';
 
 function App() {
   return (
@@ -27,7 +28,7 @@ function App() {
             <Route exact={true} path='/department/:departmentId'>
               <Department />
             </Route>
-            <Route exact={true} path='/faculty-profile'>
+            <Route exact={true} path='/faculty-profile/:facultyId'>
               <Profile />
             </Route>
             <Route exact={true} path='/administration'>
@@ -50,6 +51,9 @@ function App() {
             </Route>
             <Route exact={true} path='/about-college'>
               <AboutCollege />
+            </Route>
+            <Route exact={true} path='/gallery'>
+              <GalleryComponent />
             </Route>
           </Switch>
           <Footer />

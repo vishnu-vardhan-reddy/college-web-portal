@@ -44,7 +44,7 @@ function AboutDropDown() {
               About College
             </Link>
           </li>
-          <li>
+          {/* <li>
             <Link
               className='dropdown-link'
               to='/'
@@ -52,24 +52,28 @@ function AboutDropDown() {
             >
               Chancellor
             </Link>
-          </li>
+          </li> */}
           <li>
-            <Link
+            <a
               className='dropdown-link'
-              to='/'
+              target='_blank'
+              rel='noreferrer'
+              href='http://www.yogivemanauniversity.ac.in/vc_prof.php'
               onClick={() => setClick(false)}
             >
               Vice Chancellor profile
-            </Link>
+            </a>
           </li>
           <li>
-            <Link
+            <a
               className='dropdown-link'
-              to='/'
+              href='http://www.yogivemanauniversity.ac.in/colleges/rector.php'
               onClick={() => setClick(false)}
+              target='_blank'
+              rel='noreferrer'
             >
               Registrar Profile
-            </Link>
+            </a>
           </li>
           <li>
             <Link

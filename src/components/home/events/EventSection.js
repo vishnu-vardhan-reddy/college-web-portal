@@ -6,7 +6,7 @@ import { ThemeProvider } from '@material-ui/styles';
 import { createMuiTheme } from '@material-ui/core/styles';
 import SendIcon from '@material-ui/icons/Send';
 import { useHistory } from 'react-router-dom';
-import { impLinksResponse } from '../../utils/api';
+import { impLinksResponse, upcomingEventsResponse } from '../../utils/api';
 
 const theme = createMuiTheme({
   palette: {
@@ -21,6 +21,7 @@ const theme = createMuiTheme({
 
 function EventSection() {
   const [threeLinks, setThreeLinks] = useState([]);
+  const [upcomingEvents, setUpcomingEvents] = useState([]);
   const history = useHistory();
 
   useEffect(() => {
@@ -29,6 +30,19 @@ function EventSection() {
         const result = await impLinksResponse();
         if (result) {
           setThreeLinks(result.reverse().slice(0, 3));
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    })();
+  }, []);
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const result = await upcomingEventsResponse();
+        if (result) {
+          setUpcomingEvents(result.reverse().slice(0, 3));
         }
       } catch (error) {
         console.log(error);
@@ -54,6 +68,7 @@ function EventSection() {
             variant='contained'
             color='secondary'
             className='readMore__button'
+            onClick={() => history.push('/about-college')}
           >
             Read More
           </Button>
@@ -63,7 +78,7 @@ function EventSection() {
               <div className='important__links' key={id}>
                 <img src={arrow} alt='arrrow' />
                 <a href={link} target='_blank' rel='noreferrer'>
-                  {description}
+                  {description ? description : link}
                 </a>
               </div>
             ))}
@@ -83,21 +98,17 @@ function EventSection() {
         <div className='eventSectionContainer__right'>
           <div className='eventSectionContainer__rightCotainer'>
             <h1>Upcoming Events</h1>
-            <div className='eventContainer'>
-              <span>21st dec 2022</span>
-              <p>computer science workshop</p>
-              <span>10:00am-01:00pm</span>
-            </div>
-            <div className='eventContainer'>
-              <span>21st dec 2022</span>
-              <p>computer science workshop</p>
-              <span>10:00am-01:00pm</span>
-            </div>
-            <div className='eventContainer'>
-              <span>21st dec 2022</span>
-              <p>computer science workshop</p>
-              <span>10:00am-01:00pm</span>
-            </div>
+            {upcomingEvents?.map((event, id) => (
+              <div className='eventContainer'>
+                <span>
+                  {event.date
+                    ? new Date(event.date).toDateString()
+                    : 'Loading.....'}
+                </span>
+                <p>{event.event_name ? event.event_name : 'Loading.....'}</p>
+                <span>{event.time ? event.time : 'Loading.....'}</span>
+              </div>
+            ))}
           </div>
         </div>
       </div>

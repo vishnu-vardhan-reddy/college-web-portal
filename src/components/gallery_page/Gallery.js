@@ -1,30 +1,24 @@
 import React, { useState, useCallback, useEffect } from 'react';
-import './PhotoGallery.css';
+import { photosResponse } from '../utils/api';
+import './Gallery.css';
 import Gallery from 'react-photo-gallery';
 import Carousel, { Modal, ModalGateway } from 'react-images';
-// import { photos, photosSet } from './photos';
-import SendIcon from '@material-ui/icons/Send';
-import { Button } from '@material-ui/core';
-import { photosResponse } from '../../utils/api';
-import { photosSet } from './photos';
-import { useHistory } from 'react-router-dom';
+import { setPhotoSize } from './../utils/setPhotoSize';
 
-function PhotoGallery() {
+function GalleryComponent() {
   const [photos, setPhotos] = useState([]);
   const [currentImage, setCurrentImage] = useState(0);
   const [viewerIsOpen, setViewerIsOpen] = useState(false);
 
-  const history = useHistory();
-
   useEffect(() => {
     (async () => {
       try {
-        const res = await photosResponse();
-        if (res) {
-          setPhotos(photosSet(res));
+        const result = await photosResponse();
+        if (result) {
+          setPhotos(setPhotoSize(result));
         }
-      } catch (error) {
-        console.log(error.response);
+      } catch (e) {
+        console.log(e);
       }
     })();
   }, []);
@@ -40,24 +34,9 @@ function PhotoGallery() {
   };
 
   return (
-    <div className='photoGallery'>
-      <div className='photoGalleryContainer__header'>
-        <h1>Photo Gallery</h1>
-        <div
-          className='gallery__button'
-          onClick={() => history.push('/gallery')}
-        >
-          <Button
-            variant='outlined'
-            endIcon={<SendIcon />}
-            color='secondary'
-            className='see__more'
-          >
-            See More
-          </Button>
-        </div>
-      </div>
-      <div className='photoGalleryContainer'>
+    <div className='gallery'>
+      <h1>Gallery</h1>
+      <div className='galleryContainer'>
         <Gallery photos={photos ? photos : []} onClick={openLightbox} />
         <ModalGateway>
           {viewerIsOpen ? (
@@ -78,4 +57,4 @@ function PhotoGallery() {
   );
 }
 
-export default PhotoGallery;
+export default GalleryComponent;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './RecentEvents.css';
 import event1 from './events1.jpg';
 import event2 from './event2.jpg';
@@ -7,8 +7,11 @@ import Button from '@material-ui/core/Button';
 import SendIcon from '@material-ui/icons/Send';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+import { useEffect } from 'react';
+import { recentEventsResponse } from './../../utils/api';
 
 function RecentEvents() {
+  const [events, setEvents] = useState([]);
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
@@ -26,6 +29,19 @@ function RecentEvents() {
       slidesToSlide: 1,
     },
   };
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const result = await recentEventsResponse();
+        if (result) {
+          setEvents(result);
+        }
+      } catch (e) {
+        console.log(e);
+      }
+    })();
+  }, []);
 
   return (
     <div className='blogContainer'>
@@ -54,20 +70,18 @@ function RecentEvents() {
           keyBoardControl={true}
           containerClass='carousel-container'
         >
-          <div className='blogsContainer__post'>
-            <img src={event1} alt='event 1' />
-            <div className='blogsContainer__postContent'>
-              <h3>Teachers day</h3>
-              <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book. It has
-                survived not only five centuries
-              </p>
+          {events?.map((event, index) => (
+            <div className='blogsContainer__post'>
+              <img src={event.gallery_set[0].image} alt='event 1' />
+              <div className='blogsContainer__postContent'>
+                <h3>{event.event_name}</h3>
+                <p>Event Date: {new Date(event.date).toDateString()}</p>
+                <p>{event.description}</p>
+              </div>
             </div>
-          </div>
-          <div className='blogsContainer__post'>
+          ))}
+
+          {/* <div className='blogsContainer__post'>
             <img src={event2} alt='event 2' />
             <div className='blogsContainer__postContent'>
               <h3>Republic day</h3>
@@ -131,7 +145,7 @@ function RecentEvents() {
                 survived not only five centuries
               </p>
             </div>
-          </div>
+          </div> */}
         </Carousel>
       </div>
     </div>

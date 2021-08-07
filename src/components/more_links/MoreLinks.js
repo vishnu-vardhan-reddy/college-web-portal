@@ -64,7 +64,12 @@ function MoreLinks() {
               {links.map((row) => (
                 <TableRow key={row.id}>
                   <TableCell component='th' scope='row'>
-                    <a href={row.link} target='_blank' rel='noreferrer'>
+                    <a
+                      href={row.link}
+                      target='_blank'
+                      rel='noreferrer'
+                      style={{ color: 'black' }}
+                    >
                       {row.description}
                     </a>
                   </TableCell>

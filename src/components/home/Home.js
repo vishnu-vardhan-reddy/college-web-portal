@@ -5,7 +5,6 @@ import EventSection from './events/EventSection';
 import Departments from './departments/Departments';
 import Vlog from './vlog/Vlog';
 import RecentEvents from './recent events/RecentEvents';
-import Gallery from './gallery/Gallery';
 import DirectorMessage from './message/DirectorMessage';
 import PhotoGallery from './photo_gallery/PhotoGallery';
 import HomeFAQ from './home_faq/HomeFAQ';

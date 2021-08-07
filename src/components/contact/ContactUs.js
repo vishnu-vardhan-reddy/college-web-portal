@@ -1,46 +1,62 @@
-import React, { useState } from 'react'
-import './ContactUs.css'
-import location from './locationImg.jpg'
-import MyLocationIcon from '@material-ui/icons/MyLocation'
-import PhoneIcon from '@material-ui/icons/Phone'
-import MailOutlineIcon from '@material-ui/icons/MailOutline'
-import InstagramIcon from '@material-ui/icons/Instagram'
-import TwitterIcon from '@material-ui/icons/Twitter'
-import FacebookIcon from '@material-ui/icons/Facebook'
-import LinkedInIcon from '@material-ui/icons/LinkedIn'
-import GoogleMapReact from 'google-map-react'
-import LocationOnIcon from '@material-ui/icons/LocationOn'
-import FaqAccordion from './FaqAccordion'
+import React, { useState } from 'react';
+import './ContactUs.css';
+import location from './location.json';
+import MyLocationIcon from '@material-ui/icons/MyLocation';
+import PhoneIcon from '@material-ui/icons/Phone';
+import MailOutlineIcon from '@material-ui/icons/MailOutline';
+import InstagramIcon from '@material-ui/icons/Instagram';
+import TwitterIcon from '@material-ui/icons/Twitter';
+import FacebookIcon from '@material-ui/icons/Facebook';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
+// import GoogleMapReact from 'google-map-react';
+import Lottie from 'react-lottie';
+import FaqAccordion from './FaqAccordion';
 
-const AnyReactComponent = ({ text }) => (
-  <div style={{ color: 'orange', fontSize: '3rem' }}>{<LocationOnIcon />}</div>
-)
+// const AnyReactComponent = ({ text }) => (
+//   <div style={{ color: 'orange', fontSize: '3rem' }}>{<LocationOnIcon />}</div>
+// );
 
 function ContactUs() {
   // const [subject, setSubject] = useState('')
-  const [name, setName] = useState('')
-  const [emailBody, setEmailBody] = useState('')
-  const defaultProps = {
-    center: {
-      lat: 59.95,
-      lng: 30.33,
+  const [name, setName] = useState('');
+  const [emailBody, setEmailBody] = useState('');
+  // const defaultProps = {
+  //   center: {
+  //     lat: 59.95,
+  //     lng: 30.33,
+  //   },
+  //   zoom: 11,
+  // };
+
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: location,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice',
     },
-    zoom: 11,
-  }
+  };
 
   const sendEmail = (e) => {
-    e.preventDefault()
-    const email = 'yvu@gmail.com'
-    const subject = 'hi ' + name
+    e.preventDefault();
+    const email = 'yvu@gmail.com';
+    const subject = 'hi ' + name;
     window.open(
       'mailto:' + email + '?subject=' + subject + '&body=' + emailBody
-    )
-  }
+    );
+  };
 
   return (
     <div className='contactUs'>
       <div className='contactUs__container'>
-        {/* <img src={location} alt="" className="contactUs__map" /> */}
+        {/* <img src={location} alt='' className='contactUs__map' /> */}
+        <a
+          href='https://www.google.com/maps?q=ysr+engineering+college&um=1&ie=UTF-8&sa=X&ved=2ahUKEwiH75C5hp3yAhXvIbcAHUKVAv8Q_AUoAnoECAEQBA'
+          target='_blank'
+          rel='noreferrer'
+        >
+          <Lottie options={defaultOptions} height={200} width={200} />
+        </a>
         {/* <div className="contactUs__map">
           <GoogleMapReact
             bootstrapURLKeys={{
@@ -108,9 +124,9 @@ function ContactUs() {
         <FaqAccordion />
       </div>
     </div>
-  )
+  );
 }
 
-export default ContactUs
+export default ContactUs;
 
 // api key = AIzaSyC7FrXyd5iT7KS2Fv8xW7w3NFgvxP9BOZk

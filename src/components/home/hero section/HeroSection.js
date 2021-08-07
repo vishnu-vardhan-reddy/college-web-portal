@@ -21,15 +21,24 @@ function HeroSection() {
       className='hero-section'
     >
       <div className='carousal__item'>
-        <img src={banner2} alt='corousal__image' />
+        <img
+          src='https://wallpapercave.com/wp/wp2140467.jpg'
+          alt='corousal__image'
+        />
         {/* <p className="legend">University</p> */}
       </div>
       <div className='carousal__item'>
-        <img src={banner3} alt='corousal__image' />
+        <img
+          src='https://images.unsplash.com/photo-1455734729978-db1ae4f687fc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80'
+          alt='corousal__image'
+        />
         {/* <p className="legend">Academic Block</p> */}
       </div>
       <div className='carousal__item'>
-        <img src={banner2} alt='corousal__image' />
+        <img
+          src='https://images.unsplash.com/photo-1536925155833-43e9c2b2f499?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80'
+          alt='corousal__image'
+        />
         {/* <p className="legend">Hostels</p> */}
       </div>
     </Carousel>
