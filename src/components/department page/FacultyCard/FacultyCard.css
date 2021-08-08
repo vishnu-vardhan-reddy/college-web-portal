@@ -11,6 +11,7 @@
 }
 
 .facultyCard > img {
+  border-radius: 999px;
   width: 8rem;
   margin-top: -3rem;
   object-fit: contain;

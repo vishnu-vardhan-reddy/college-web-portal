@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import './HodCard.css';
-import profile from './profile.svg';
+import profile from '../profile.svg';
 import CallOutlinedIcon from '@material-ui/icons/CallOutlined';
 import MailOutlinedIcon from '@material-ui/icons/MailOutlined';
 import { Button } from '@material-ui/core';
@@ -21,7 +21,7 @@ function HodCard({ hodData }) {
   });
   return (
     <div className='hodCard' data-aos='flip-up'>
-      <img src={hodData.profileImg} alt={''} />
+      <img src={hodData.profileImg ? hodData.profileImg : profile} alt={''} />
       <div className='hodCardContainer'>
         <h3>{hodData.name}</h3>
         <h3>{hodData.position}</h3>

@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import './FacultyCard.css';
+import profile from '../profile.svg';
 import { useHistory } from 'react-router-dom';
 import CallOutlinedIcon from '@material-ui/icons/CallOutlined';
 import MailOutlinedIcon from '@material-ui/icons/MailOutlined';
@@ -21,7 +22,10 @@ function FacultyCard({ facultyData }) {
   });
   return (
     <div className='facultyCard' data-aos='slide-up'>
-      <img src={facultyData.profileImg} alt='faculty_image' />
+      <img
+        src={facultyData.profileImg ? facultyData.profileImg : profile}
+        alt='faculty_image'
+      />
       <div className='facultyCardContainer'>
         <h3>{facultyData.name}</h3>
         <h3>{facultyData.position}</h3>

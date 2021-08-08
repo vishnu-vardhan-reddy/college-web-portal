@@ -74,3 +74,18 @@ export const recentEventsResponse = async () => {
     throw error;
   }
 };
+
+export const facultyResponse = async (id) => {
+  try {
+    const result = await axios({
+      method: 'get',
+      url: `/faculty/${id}`,
+    });
+    if (result) {
+      console.log(result);
+      return result.data;
+    }
+  } catch (error) {
+    throw error;
+  }
+};

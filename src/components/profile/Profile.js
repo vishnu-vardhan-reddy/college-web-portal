@@ -1,119 +1,235 @@
-import React from 'react'
-import './Profile.css'
-import profile from './profile.svg'
-import FacebookIcon from '@material-ui/icons/Facebook'
-import YouTubeIcon from '@material-ui/icons/YouTube'
-import LinkedInIcon from '@material-ui/icons/LinkedIn'
-import TwitterIcon from '@material-ui/icons/Twitter'
-import InstagramIcon from '@material-ui/icons/Instagram'
-import CallOutlinedIcon from '@material-ui/icons/CallOutlined'
-import MailOutlinedIcon from '@material-ui/icons/MailOutlined'
-import HomeIcon from '@material-ui/icons/Home'
+import React, { useState, useEffect } from 'react';
+import './Profile.css';
+import profile from './profile.svg';
+import FacebookIcon from '@material-ui/icons/Facebook';
+import YouTubeIcon from '@material-ui/icons/YouTube';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import TwitterIcon from '@material-ui/icons/Twitter';
+import InstagramIcon from '@material-ui/icons/Instagram';
+import CallOutlinedIcon from '@material-ui/icons/CallOutlined';
+import MailOutlinedIcon from '@material-ui/icons/MailOutlined';
+import HomeIcon from '@material-ui/icons/Home';
+import { useParams } from 'react-router-dom';
+import { facultyResponse } from '../utils/api';
+import MoonLoader from './../utils/Loader';
+import { idTodepartment } from './../utils/idTodepartment';
+import { destructureArray } from './../utils/destructureArray';
 
 function Profile() {
+  const [loading, setLoading] = useState(false);
+  const [faculty, setFaculty] = useState({});
+  const [profileSet, setProfileSet] = useState([]);
+  const [qualifications, setQualifications] = useState({});
+
+  const { facultyId } = useParams();
+  console.log(facultyId);
+  useEffect(() => {
+    const ac = new AbortController();
+    (async () => {
+      try {
+        setLoading(true);
+        const result = await facultyResponse(facultyId);
+        if (result) {
+          setFaculty(result);
+          setProfileSet(destructureArray(result.facultyprofile_set));
+          setQualifications(result.qualification_set);
+          setLoading(false);
+        }
+      } catch (e) {
+        setLoading(false);
+        console.log(e);
+      }
+    })();
+    return ac.abort();
+  }, [facultyId]);
   return (
     <div className='profile'>
-      <div className='profileContainer'>
-        <div className='profileContainer__left'>
-          <img src={profile} alt='' />
-          <h3>DR Kalam</h3>
-          <p>CSE Department</p>
-          <p>Since 2010</p>
-          <div className='profileContainer__leftSocial'>
-            <FacebookIcon />
-            <YouTubeIcon />
-            <LinkedInIcon />
-            <InstagramIcon />
-            <TwitterIcon />
+      {loading ? (
+        <MoonLoader loading={loading} />
+      ) : (
+        <div className='profileContainer'>
+          <div className='profileContainer__left'>
+            <img src={faculty.profileImg} alt='' />
+            <h3>{faculty.name}</h3>
+            <p>{idTodepartment(faculty.department)}</p>
+            <p>{faculty.pro_experience} years of experience</p>
+            <div className='profileContainer__leftSocial'>
+              {faculty.fb_link && (
+                <a
+                  href={faculty.fb_link}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  <FacebookIcon />
+                </a>
+              )}
+
+              {faculty.youtube_link && (
+                <a
+                  href={faculty.youtube_link}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  <YouTubeIcon />
+                </a>
+              )}
+
+              {faculty.insta_link && (
+                <a
+                  href={faculty.insta_link}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  <InstagramIcon />
+                </a>
+              )}
+
+              {faculty.linkedin_link && (
+                <a
+                  href={faculty.linkedin_link}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  <LinkedInIcon />
+                </a>
+              )}
+
+              {faculty.twitter_link && (
+                <a
+                  href={faculty.twitter_link}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  <TwitterIcon />
+                </a>
+              )}
+            </div>
+          </div>
+          <div className='profileContainer__right'>
+            <div className='profileContainer__rightContact'>
+              <h3>Contact Info</h3>
+              <div className='profile__contact'>
+                <CallOutlinedIcon />
+                <p>{faculty.contact}</p>
+              </div>
+              <div className='profile__contact'>
+                <MailOutlinedIcon />
+                <p>{faculty.email}</p>
+              </div>
+              <div className='profile__contact'>
+                {faculty.address && (
+                  <>
+                    <HomeIcon />
+                    <p>{faculty.address}</p>
+                  </>
+                )}
+              </div>
+            </div>
+            {faculty.about && (
+              <div className='profileContainer__rightAbout'>
+                <h3>About {faculty.name}</h3>
+                <p>{faculty.about}</p>
+              </div>
+            )}
+            {qualifications?.length > 0 && (
+              <div className='profileContainer__rightAbout'>
+                <h3>Qualifications</h3>
+                <div className='profileContainer__rightQualifications'>
+                  {qualifications?.map((qualification, index) => (
+                    <p>
+                      `${qualification.degree} in $
+                      {qualification.specialization} from
+                      {qualification.institute}, ${qualification.year}.`
+                    </p>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {profileSet.seminars?.length > 0 &&
+              profileSet.seminars?.map((seminar, index) => (
+                <div className='profileContainer__rightAbout'>
+                  <h3>Seminars</h3>
+                  <div className='profileContainer__rightQualifications'>
+                    <p>{seminar.content}</p>
+                  </div>
+                </div>
+              ))}
+
+            {profileSet.scholar?.length > 0 &&
+              profileSet.scholar?.map((seminar, index) => (
+                <div className='profileContainer__rightAbout'>
+                  <h3>Scholars</h3>
+                  <div className='profileContainer__rightQualifications'>
+                    <p>{seminar.scholar}</p>
+                  </div>
+                </div>
+              ))}
+
+            {profileSet.publishedBooks?.length > 0 &&
+              profileSet.publishedBooks?.map((seminar, index) => (
+                <div className='profileContainer__rightAbout'>
+                  <h3>Published Books</h3>
+                  <div className='profileContainer__rightQualifications'>
+                    <p>{seminar.publishedBooks}</p>
+                  </div>
+                </div>
+              ))}
+
+            {profileSet.awards?.length > 0 &&
+              profileSet.awards?.map((seminar, index) => (
+                <div className='profileContainer__rightAbout'>
+                  <h3>Awards</h3>
+                  <div className='profileContainer__rightQualifications'>
+                    <p>{seminar.awards}</p>
+                  </div>
+                </div>
+              ))}
+
+            {profileSet.journals?.length > 0 &&
+              profileSet.journals?.map((seminar, index) => (
+                <div className='profileContainer__rightAbout'>
+                  <h3>Journals</h3>
+                  <div className='profileContainer__rightQualifications'>
+                    <p>{seminar.journals}</p>
+                  </div>
+                </div>
+              ))}
+
+            {profileSet.memberships?.length > 0 &&
+              profileSet.memberships?.map((seminar, index) => (
+                <div className='profileContainer__rightAbout'>
+                  <h3>Memberships</h3>
+                  <div className='profileContainer__rightQualifications'>
+                    <p>{seminar.memberships}</p>
+                  </div>
+                </div>
+              ))}
+
+            {profileSet.fundProjects?.length > 0 &&
+              profileSet.fundProjects?.map((seminar, index) => (
+                <div className='profileContainer__rightAbout'>
+                  <h3>FundProjects</h3>
+                  <div className='profileContainer__rightQualifications'>
+                    <p>{seminar.fundProjects}</p>
+                  </div>
+                </div>
+              ))}
+
+            {profileSet.researchPapers?.length > 0 &&
+              profileSet.researchPapers?.map((seminar, index) => (
+                <div className='profileContainer__rightAbout'>
+                  <h3>ResearchPapers</h3>
+                  <div className='profileContainer__rightQualifications'>
+                    <p>{seminar.researchPapers}</p>
+                  </div>
+                </div>
+              ))}
           </div>
         </div>
-        <div className='profileContainer__right'>
-          <div className='profileContainer__rightContact'>
-            <h3>Contact Info</h3>
-            <div className='profile__contact'>
-              <CallOutlinedIcon />
-              <p>9999999999</p>
-            </div>
-            <div className='profile__contact'>
-              <MailOutlinedIcon />
-              <p>Abdul@yvu.ac.in</p>
-            </div>
-            <div className='profile__contact'>
-              <HomeIcon />
-              <p>proddatur, Andhra</p>
-            </div>
-          </div>
-          <div className='profileContainer__rightAbout'>
-            <h3>About Abdul</h3>
-            <p>
-              One of the most sought design, One of the most sought after
-              courses amongst engineering students, Computer Science Engineering
-              (CSE) is an academic programme which integrates the field of
-              Computer Engineering and Computer Science. The programme, which
-              emphasises the basics of computer programming and networking,
-              comprises a plethora of tf Computer Engineering and Computer
-              Science. The programme, which emphasises the basics of computer
-              programming and networking, comprises a plethora of topics. The
-              said topics are related to computation, a,{' '}
-            </p>
-          </div>
-          <div className='profileContainer__rightAbout'>
-            <h3>Qualifications</h3>
-            <div className='profileContainer__rightQualifications'>
-              <p>
-                Ph.D in Computer Science and Engineering (Web Mining) from
-                Acharya Nagarjuna University, Guntur, 2014.
-              </p>
-              <p>
-                Ph.D in Computer Science and Engineering (Web Mining) from
-                Acharya Nagarjuna University, Guntur, 2014.
-              </p>
-              <p>
-                Ph.D in Computer Science and Engineering (Web Mining) from
-                Acharya Nagarjuna University, Guntur, 2014.
-              </p>
-            </div>
-          </div>
-          <div className='profileContainer__rightAbout'>
-            <h3>Experience</h3>
-            <div className='profileContainer__rightQualifications'>
-              <p>Post Ph.D having 6+ years of teaching experience.</p>
-              <p>
-                20 years of teaching experience in engineering subjects for UG
-                (B.Tech), PG (M.Tech) Courses.
-              </p>
-            </div>
-          </div>
-          <div className='profileContainer__rightAbout'>
-            <h3>Research Activities</h3>
-            <div className='profileContainer__rightQualifications'>
-              <p>International / National Publications Published : 25</p>
-              <p>International / National Publications Published : 25</p>
-              <p>
-                Google Scholar: Citations – 32 ; H Index – 3 ; i10 Index – 1{' '}
-              </p>
-            </div>
-          </div>
-          <div className='profileContainer__rightAbout'>
-            <h3>Achievements</h3>
-            <div className='profileContainer__rightQualifications'>
-              <p>Excellent People Management Skills.</p>
-              <p>Having more than 17years experience as Administrator.</p>
-              <p>
-                GProficient at guiding IEEE projects for UG and PG Students.{' '}
-              </p>
-              <p>Experienced in establishing well-equipped Laboratories.</p>
-              <p>
-                Reviewer for International Journal of Engineering Research &
-                Technology (IJERT).
-              </p>
-              <p>Reviewer for FLAT Textbook in Pearson Education.</p>
-            </div>
-          </div>
-        </div>
-      </div>
+      )}
     </div>
-  )
+  );
 }
 
-export default Profile
+export default Profile;

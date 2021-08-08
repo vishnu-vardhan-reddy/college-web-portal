@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import './Faculty.css';
-import FacultyCard from './FacultyCard';
-import HodCard from './HodCard';
-import StaffCard from './StaffCard';
+import FacultyCard from './FacultyCard/FacultyCard';
+import HodCard from './HodCard/HodCard';
+import StaffCard from './StaffCard/StaffCard';
 import Fade from 'react-reveal/Fade';
 
 function Faculty({ hod, faculty }) {
