@@ -1,9 +1,7 @@
 import React, { useEffect } from 'react';
 import './Faculty.css';
-import FacultyCard from './FacultyCard/FacultyCard';
-import HodCard from './HodCard/HodCard';
-import StaffCard from './StaffCard/StaffCard';
-import Fade from 'react-reveal/Fade';
+import FacultyCard from '../FacultyCard/FacultyCard';
+import HodCard from '../HodCard/HodCard';
 
 function Faculty({ hod, faculty }) {
   return (
@@ -16,7 +14,6 @@ function Faculty({ hod, faculty }) {
         </div>
         <div className='facultyContainer'>
           <h3>Department Faculty</h3>
-
           <div className='facultyContainer__cards'>
             {faculty?.map((facultyData, index) => (
               <FacultyCard facultyData={facultyData} key={index} />

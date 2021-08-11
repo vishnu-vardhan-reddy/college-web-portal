@@ -19,7 +19,7 @@ function CampusDropDown() {
           <li>
             <Link
               className='dropdown-link'
-              to='/'
+              to='/administrativeBlock'
               onClick={() => setClick(false)}
             >
               Administrative Block
@@ -28,7 +28,7 @@ function CampusDropDown() {
           <li>
             <Link
               className='dropdown-link'
-              to='/'
+              to='/academicBlock'
               onClick={() => setClick(false)}
             >
               Academic Block

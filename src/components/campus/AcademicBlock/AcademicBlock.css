@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gentium+Basic&family=Proza+Libre&family=Titillium+Web&display=swap');
+
+.academicBlockContainer,
+.academicBlock {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+}
+
+.academicBlockContainer {
+  width: 95%;
+}
+
+.academicBlock > h1 {
+  margin: 2rem 0;
+  font-size: 1.5rem;
+  position: relative;
+  font-family: 'Lobster', cursive;
+}
+
+.academicBlock > h1::after {
+  position: absolute;
+  content: '';
+  margin-left: 2rem;
+  bottom: -2px;
+  width: 10vw;
+  border: 1px solid #2c5877;
+}
+
+.academicBlock > h1::before {
+  position: absolute;
+  content: '';
+  display: inline-block;
+  left: -12.5vw;
+  bottom: -2px;
+  width: 10vw;
+  border: 1px solid #2c5877;
+}
+
+.academicBlockContainer > img {
+  width: 100%;
+}
+
+.academicBlockContainer__content {
+  margin: 1rem 0;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #6698b9;
+}
+
+.academicBlockContainer__content > p {
+  margin-bottom: 0.5rem;
+  text-align: justify;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+.academicBlockContainer__rulesGeneral {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.academicBlockContainer__rulesGeneral > h2 {
+  margin: 1.5rem 0 1rem 0;
+  font-weight: 400;
+  color: #6b6b6b;
+}
+
+.academicBlockContainer__rulesGeneral > h3 {
+  margin: 1.5rem 0;
+  color: #f96f26;
+}
+
+.academicBlockContainer__rulesRow {
+  display: flex;
+  align-items: start;
+}
+
+.academicBlockContainer__rulesRow > p {
+  margin-bottom: 0.5rem;
+  text-align: justify;
+  font-family: 'Titillium Web', sans-serif;
+  margin-left: 0.5rem;
+}
+
+.academicBlockContainer__rightContact {
+  margin-top: 1rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #6698b9;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.academicBlockContainer__rightContact > h3 {
+  font-size: 1.2rem;
+  color: #f96f26;
+}
+
+.academicBlock__contact {
+  margin-left: 2rem;
+  margin-top: 0.7rem;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.academicBlock__contact > .MuiSvgIcon-root {
+  margin-right: 7px;
+  font-size: 1.4rem;
+}
+
+.academicBlock__contact > p {
+  margin-left: 10px;
+  font-size: 0.9rem;
+}
+
+@media screen and (max-width: 780px) {
+  .academicBlockContainer__rulesGeneral {
+    padding-right: 5px;
+  }
+}

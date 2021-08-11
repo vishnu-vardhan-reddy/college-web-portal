@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import './Authorities.css';
 import administrationPic from './adminstrationPic.jpg';
-import MemberCard from './MemberCard';
+import MemberCard from '../MemberCard/MemberCard';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import ExecutiveCard from './ExecutiveCard';
+import ExecutiveCard from '../ExecutiveCard/ExecutiveCard';
 
 function Authorities() {
   useEffect(() => {

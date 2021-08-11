@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import './Department.css';
-import About from './About';
-import Faculty from './Faculty';
-import Laboratory from './Laboratory';
-import Acheivements from './Acheivements';
+import About from './About/About';
+import Faculty from './Faculty/Faculty';
+import Laboratory from './Laboratory/Laboratory';
+import Acheivements from './Achievements/Acheivements';
 import { useHistory, useParams } from 'react-router-dom';
 import smoothscroll from 'smoothscroll-polyfill';
-import SyllabusAccordion from './../utils/SyllabusAccordion';
+import Syllabus from './syllabus/Syllabus';
 import { departmentResponse } from './../utils/api';
 import PhotoGallery from './photo_gallery/PhotoGallery';
 import MoonLoader from './../utils/Loader';
@@ -15,6 +15,8 @@ function Department() {
   const [faculty, setFaculty] = useState([]);
   const [hodContent, setHodContent] = useState({});
   const [laboratories, setLaboratories] = useState([]);
+  const [achievements, setAchievements] = useState([]);
+  const [syllabus, setSyllabus] = useState([]);
   const [images, setImages] = useState([]);
   const [about, setAbout] = useState('');
   const [title, setTitle] = useState('');
@@ -41,6 +43,8 @@ function Department() {
           setImages(response.gallery_set);
           setAbout(response.about);
           setLaboratories(response.laboratory_set);
+          setAchievements(response.acheivement_set);
+          setSyllabus(response.syllabus);
           setLoading(false);
         }
       } catch (err) {
@@ -71,13 +75,13 @@ function Department() {
               <Faculty hod={hodContent} faculty={faculty} />
             </div>
             <div id='syllabus'>
-              <SyllabusAccordion />
+              <Syllabus syllabus={syllabus} />
             </div>
             <div id='laboratories'>
               <Laboratory laboratories={laboratories} />
             </div>
             <div id='achievements'>
-              <Acheivements />
+              <Acheivements achievements={achievements} />
             </div>
             <div id='achievements'>
               <PhotoGallery images={images} />

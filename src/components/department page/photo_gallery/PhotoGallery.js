@@ -36,19 +36,6 @@ function PhotoGallery({ images }) {
     <div className='photoGallery'>
       <div className='photoGalleryContainer__header'>
         <h1>Photo Gallery</h1>
-        <div
-          className='gallery__button'
-          onClick={() => history.push('/gallery')}
-        >
-          <Button
-            variant='outlined'
-            endIcon={<SendIcon />}
-            color='secondary'
-            className='see__more'
-          >
-            See More
-          </Button>
-        </div>
       </div>
       <div className='photoGalleryContainer'>
         <Gallery photos={photos ? photos : []} onClick={openLightbox} />

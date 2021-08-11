@@ -1,12 +1,12 @@
-import React from "react";
-import "./Administration.css";
-import Authorities from "./Authorities";
+import React from 'react';
+import './Administration.css';
+import Authorities from './Authorities/Authorities';
 
 function Administration() {
   return (
-    <div className="administration">
+    <div className='administration'>
       <h1>ADMINISTRATION</h1>
-      <div className="administrationContainer">
+      <div className='administrationContainer'>
         <Authorities />
       </div>
     </div>

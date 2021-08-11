@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import './ExecutiveCard.css';
-import profile from './profile.svg';
+import profile from '../profile.svg';
 import CallOutlinedIcon from '@material-ui/icons/CallOutlined';
 import MailOutlinedIcon from '@material-ui/icons/MailOutlined';
 import { Button } from '@material-ui/core';

@@ -49,7 +49,10 @@ function Profile() {
       ) : (
         <div className='profileContainer'>
           <div className='profileContainer__left'>
-            <img src={faculty.profileImg} alt='' />
+            <img
+              src={faculty.profileImg ? faculty.profileImg : profile}
+              alt=''
+            />
             <h3>{faculty.name}</h3>
             <p>{idTodepartment(faculty.department)}</p>
             <p>{faculty.pro_experience} years of experience</p>

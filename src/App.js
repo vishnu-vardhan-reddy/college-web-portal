@@ -14,6 +14,7 @@ import Academics from './components/academic_calender/Academics';
 import MoreLinks from './components/more_links/MoreLinks';
 import AboutCollege from './components/about_college/AboutCollege';
 import GalleryComponent from './components/gallery_page/Gallery';
+import { AcademicBlock, AdministrativeBlock } from './components/campus';
 
 function App() {
   return (
@@ -54,6 +55,12 @@ function App() {
             </Route>
             <Route exact={true} path='/gallery'>
               <GalleryComponent />
+            </Route>
+            <Route exact={true} path='/academicBlock'>
+              <AcademicBlock />
+            </Route>
+            <Route exact={true} path='/administrativeBlock'>
+              <AdministrativeBlock />
             </Route>
           </Switch>
           <Footer />
