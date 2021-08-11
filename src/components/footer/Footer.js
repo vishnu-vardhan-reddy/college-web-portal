@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import './Footer.css'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import collegeLogo from './collegeLogo.svg'
 import FacebookIcon from '@material-ui/icons/Facebook'
 import YouTubeIcon from '@material-ui/icons/YouTube'
@@ -15,6 +15,7 @@ function Footer() {
   const [humidity, setHumidity] = useState('')
   const [weather, setWeather] = useState('')
   const [date, setDate] = useState('')
+  const history = useHistory();
 
   const days = [
     'Sunday',
@@ -67,37 +68,67 @@ function Footer() {
     <div className='footer'>
       <div className='footer__top'>
         <div className='footer__topRow'>
-          <p className='footer__topLine'>Administration</p>
-          <small>Admissions</small>
-          <small>Student Services</small>
-          <small>Adminstrative Dean</small>
-          <small>Campus Facilities</small>
-          <small>Help Desk</small>
+          <p className='footer__topLine'>Academics</p>
+          <small onClick={() => history.push('/academics/#classSchedule')}>Class Schedule</small>
+          <small onClick={() => history.push('/academics/#examSchedule')}>Exam Schedule</small>
+          <small onClick={() => history.push('/academics/#calender')}>Calenders and Time Tables</small>
         </div>
 
         <div className='footer__topRow'>
-          <p className='footer__topLine'>About Yvu</p>
-          <small>xxxxxxx</small>
-          <small>xxxxxxx</small>
-          <small>xxxxxxx</small>
+          <p className='footer__topLine'>Campus</p>
+          <small onClick={() => history.push('/administrativeBlock')}>Administrative Block</small>
+          <small onClick={() => history.push('/academicBlock')}>Academic Block</small>
+          <small onClick={() => history.push('/hostels')}>Hostels</small>
+          <small onClick={() => history.push('/library')}>Library</small>
         </div>
 
         <div className='footer__topRow'>
           <p className='footer__topLine'> Departments</p>
-          <small>Computer Science</small>
-          <small>Civil</small>
-          <small>Electronics</small>
-          <small>Electrical</small>
-          <small>MEchanical</small>
-          <small>Metallurgy</small>
+          <small onClick={() => history.push('/department/2')}>Computer Science</small>
+          <small onClick={() => history.push('/department/1')}>Civil</small>
+          <small onClick={() => history.push('/department/3')}>Electronics</small>
+          <small onClick={() => history.push('/department/4')}>Electrical</small>
+          <small onClick={() => history.push('/department/5')}>Metallurgy</small>
+          <small onClick={() => history.push('/department/6')}>Mechanical</small>
         </div>
 
         <div className='footer__topRow'>
-          <p className='footer__topLine'>Careers</p>
-          <small>xxxxxx</small>
-          <small>xxxxxx</small>
-          <small>xxxxxx</small>
-          <small>xxxxxx</small>
+          <p className='footer__topLine'>About us</p>
+          <a
+              href='http://www.yogivemanauniversity.ac.in/'
+              target='_blank'
+              rel='noreferrer'
+            >
+              About University
+            </a>
+        
+            <Link
+              to='/about-college'
+            >
+              About College
+            </Link>
+    
+            <a
+              target='_blank'
+              rel='noreferrer'
+              href='http://www.yogivemanauniversity.ac.in/vc_prof.php'
+            >
+              Vice Chancellor profile
+            </a>
+      
+            <a
+              href='http://www.yogivemanauniversity.ac.in/colleges/rector.php'
+              target='_blank'
+              rel='noreferrer'
+            >
+              Registrar Profile
+            </a>
+    
+            <Link
+              to='/faculty-profile/principal'
+            >
+              principal Profile
+            </Link>
         </div>
 
         <div className='footer__topRow'>

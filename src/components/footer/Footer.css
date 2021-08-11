@@ -50,6 +50,14 @@
   cursor: pointer;
 }
 
+.footer__topRow > a {
+  margin: 5px 0px;
+  font-weight: 700;
+  color: gray;
+  cursor: pointer;
+  font-size: 0.825rem;
+}
+
 .footer__middle {
   width: 100%;
   display: flex;

@@ -137,7 +137,7 @@
   outline-width: 0;
   border: none;
   padding: 8px 10px;
-  border-radius: 29px;
+  border-radius: 8px;
   width: 80%;
   margin-bottom: 1rem;
 }
@@ -151,16 +151,22 @@
   margin-bottom: 2rem;
 }
 
-.contactUs__containerCardRight > form > button {
+.contactUs__buttons {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.contactUs__buttons > button {
   outline-width: 0;
   border: none;
   padding: 8px 10px;
   border-radius: 8px;
-  width: 40%;
-  margin-bottom: 2rem;
+  width: 35%;
   color: black;
   cursor: pointer;
   font-weight: 600;
+  margin: 0 4px 2rem 4px ;
 }
 
 .faqContainer {
@@ -180,6 +186,8 @@
   border-left: 3px solid #f96f26;
   font-family: 'Catamaran', sans-serif;
 }
+
+
 
 @media screen and (max-width: 780px) {
   .contactUs__containerCard {

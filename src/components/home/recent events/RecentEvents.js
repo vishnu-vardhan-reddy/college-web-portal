@@ -47,7 +47,7 @@ function RecentEvents() {
     <div className='blogContainer'>
       <div className='blogsContainer__header'>
         <h1>Recent Events</h1>
-        <div className='carousal__button'>
+        {/* <div className='carousal__button'>
           <Button
             variant='outlined'
             endIcon={<SendIcon />}
@@ -56,7 +56,7 @@ function RecentEvents() {
           >
             See More
           </Button>
-        </div>
+        </div> */}
       </div>
       <div className='blogContainer__container'>
         <Carousel

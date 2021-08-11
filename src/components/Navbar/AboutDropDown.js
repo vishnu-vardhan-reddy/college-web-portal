@@ -78,7 +78,7 @@ function AboutDropDown() {
           <li>
             <Link
               className='dropdown-link'
-              to='/'
+              to='/pro'
               onClick={() => setClick(false)}
             >
               principal Profile

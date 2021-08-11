@@ -11,13 +11,16 @@ import LinkedInIcon from '@material-ui/icons/LinkedIn';
 // import GoogleMapReact from 'google-map-react';
 import Lottie from 'react-lottie';
 import FaqAccordion from './FaqAccordion';
+import axios from '../../Axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 // const AnyReactComponent = ({ text }) => (
 //   <div style={{ color: 'orange', fontSize: '3rem' }}>{<LocationOnIcon />}</div>
 // );
 
 function ContactUs() {
-  // const [subject, setSubject] = useState('')
+  const [email, setEmail] = useState('')
   const [name, setName] = useState('');
   const [emailBody, setEmailBody] = useState('');
   // const defaultProps = {
@@ -45,6 +48,27 @@ function ContactUs() {
       'mailto:' + email + '?subject=' + subject + '&body=' + emailBody
     );
   };
+
+  const submitFeedback = async (e) => {
+    e.preventDefault()
+    const data = {
+      name,
+      email,
+      query: emailBody,
+    }
+    try{
+      const result = await axios({
+        method: 'POST',
+        url: '/feedback',
+        data: data
+      })
+      if(result){
+        toast.dark('query submitted')
+      }
+    } catch(error){
+      toast.dark('error submitting the query, try again')
+    }
+  }
 
   return (
     <div className='contactUs'>
@@ -104,6 +128,12 @@ function ContactUs() {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               />
+              <input
+                type='text'
+                placeholder='email'
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
               {/* <input type='email' placeholder='email'  /> */}
               <textarea
                 type='text'
@@ -112,9 +142,14 @@ function ContactUs() {
                 value={emailBody}
                 onChange={(e) => setEmailBody(e.target.value)}
               />
+              <div className='contactUs__buttons'>
               <button type='submit' onClick={(e) => sendEmail(e)}>
+                Email
+              </button>
+              <button type='submit' onClick={(e) => submitFeedback(e)}>
                 Submit
               </button>
+              </div>
             </form>
           </div>
         </div>
@@ -123,6 +158,17 @@ function ContactUs() {
         <h1>FAQ'S</h1>
         <FaqAccordion />
       </div>
+      <ToastContainer
+        position="bottom-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+/>
     </div>
   );
 }

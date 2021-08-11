@@ -10,7 +10,7 @@ import CallOutlinedIcon from '@material-ui/icons/CallOutlined';
 import MailOutlinedIcon from '@material-ui/icons/MailOutlined';
 import HomeIcon from '@material-ui/icons/Home';
 import { useParams } from 'react-router-dom';
-import { facultyResponse } from '../utils/api';
+import { facultyResponse, facultyResponseUsingPath } from '../utils/api';
 import MoonLoader from './../utils/Loader';
 import { idTodepartment } from './../utils/idTodepartment';
 import { destructureArray } from './../utils/destructureArray';
@@ -28,7 +28,7 @@ function Profile() {
     (async () => {
       try {
         setLoading(true);
-        const result = await facultyResponse(facultyId);
+        const result =  typeof facultyId === 'number' ? await facultyResponse(facultyId) : await facultyResponseUsingPath(facultyId);
         if (result) {
           setFaculty(result);
           setProfileSet(destructureArray(result.facultyprofile_set));

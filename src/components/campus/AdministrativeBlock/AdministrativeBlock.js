@@ -1,7 +1,7 @@
 import React from 'react';
 import './AdministrativeBlock.css';
 import academicImg from './administrativeImg.svg';
-import { administrativeBlockContent, facilities } from './data';
+import { administrativeBlockContent, facilities, administrativeProcedure } from './data';
 import ArrowRightIcon from '@material-ui/icons/ArrowRight';
 import CallOutlinedIcon from '@material-ui/icons/CallOutlined';
 import MailOutlinedIcon from '@material-ui/icons/MailOutlined';
@@ -16,6 +16,15 @@ function AdministrativeBlock() {
         <div className='administrativeBlockContainer__content'>
           {administrativeBlockContent.map((row, idx) => (
             <p key={idx}>{row}</p>
+          ))}
+        </div>
+        <div className='administrativeBlockContainer__rulesGeneral'>
+          <h3>Admission Procedure</h3>
+          {administrativeProcedure.map((rule, idx) => (
+            <div className='administrativeBlockContainer__rulesRow'>
+              <ArrowRightIcon />
+              <p>{rule}</p>
+            </div>
           ))}
         </div>
         <div className='administrativeBlockContainer__rulesGeneral'>

@@ -12,14 +12,14 @@ export const MenuItems = [
     cName: 'dropdown-link',
   },
   {
-    id: 3,
+    id: 4,
     title: 'electricals',
     path: 'electricals',
     cName: 'dropdown-link',
   },
 
   {
-    id: 4,
+    id: 3,
     title: 'electronics',
     path: 'electronics',
     cName: 'dropdown-link',

@@ -89,3 +89,18 @@ export const facultyResponse = async (id) => {
     throw error;
   }
 };
+
+export const facultyResponseUsingPath = async (path) => {
+  try {
+    const result = await axios({
+      method: 'get',
+      url: path,
+    });
+    if (result) {
+      console.log(result);
+      return result.data;
+    }
+  } catch (error) {
+    throw error;
+  }
+};
