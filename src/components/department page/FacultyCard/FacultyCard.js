@@ -30,12 +30,11 @@ function FacultyCard({ facultyData }) {
         <h3>{facultyData.name}</h3>
         <h3>{facultyData.position}</h3>
         <div className='facultyCardContainer__content'>
-          <p>
-            <strong>Ph.D</strong>- Indian Institute of Technology Delhi, India
-          </p>
-          <p>
-            <strong>Areas of Interest:</strong> Digital Image Processing, IOT
-          </p>
+          {facultyData.area_of_interest && (
+            <p>
+              <strong>Areas of Interest:</strong> {facultyData.area_of_interest}
+            </p>
+          )}
           <div className='facultyCard__contact'>
             <CallOutlinedIcon />
             <p>{facultyData.contact}</p>
