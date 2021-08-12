@@ -59,14 +59,14 @@ function ContactUs() {
     try{
       const result = await axios({
         method: 'POST',
-        url: '/feedback',
+        url: '/feedback/',
         data: data
       })
       if(result){
         toast.dark('query submitted')
       }
     } catch(error){
-      
+      console.log(error.response)
       toast.dark('error submitting the query, try again')
     }
   }
