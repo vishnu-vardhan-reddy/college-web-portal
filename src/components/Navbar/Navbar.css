@@ -66,6 +66,7 @@
   height: 20px;
   margin: 0 3px;
   border: 1px solid #fff;
+  background-color:  #fff;
 }
 
 .navbar__tollNo {
@@ -165,7 +166,7 @@
   }
 
   .nav-item > a > .fa-caret-down {
-    /* display: none; */
+    display: none;
   }
 
   .nav-links {
@@ -176,7 +177,7 @@
   }
 
   .nav-links:hover {
-    background-color: #1888ff;
+    background-color: #f96f26;
     border-radius: 0;
     border-bottom: none;
   }

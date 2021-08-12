@@ -50,7 +50,7 @@ function ContactUs() {
   };
 
   const submitFeedback = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     const data = {
       name,
       email,
@@ -66,6 +66,7 @@ function ContactUs() {
         toast.dark('query submitted')
       }
     } catch(error){
+      
       toast.dark('error submitting the query, try again')
     }
   }

@@ -37,6 +37,7 @@
   align-items: center;
   flex-direction: column;
   border: 1px solid lightgray;
+  background-color:  lightgray;
   border-bottom-left-radius: 7px;
   border-top-left-radius: 7px;
 }

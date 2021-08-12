@@ -35,6 +35,7 @@
   height: 0px;
   bottom: -10px;
   border: 2px solid tomato;
+  background-color: tomato;
   transform: rotate(179.15deg);
 }
 

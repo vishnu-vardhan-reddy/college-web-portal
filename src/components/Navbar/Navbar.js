@@ -7,6 +7,8 @@ import AcademicsDropDown from './AcademicsDropDown';
 import CampusDropDown from './CampusDropDown';
 import AdministrativeDropDown from './AdministrativeDropDown';
 import AboutDropDown from './AboutDropDown';
+import Menu from '@material-ui/core/Menu';
+import MenuItem from '@material-ui/core/MenuItem';
 
 function Navbar() {
   const [click, setClick] = useState(false);
@@ -15,6 +17,8 @@ function Navbar() {
   const [campusDropdown, setCampusDropdown] = useState(false);
   const [administrationDropdown, setAdministrationDropdown] = useState(false);
   const [aboutDropdown, setAboutDropdown] = useState(false);
+  const [academicMobileMenu, setAcademicMobileMenu] = useState(null);
+
 
   const closeMobileMenu = () => setClick(false);
 
@@ -104,6 +108,14 @@ function Navbar() {
     window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' });
   };
 
+  const handleClick = (event) => {
+    setAcademicMobileMenu(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAcademicMobileMenu(null);
+  };
+
   return (
     <>
       <nav className='navbar'>
@@ -163,13 +175,27 @@ function Navbar() {
             <Link
               smooth
               scroll={(el) => scrollWidthOffset(el)}
-              to='/#academics'
+              to='/academics'
               className='nav-links'
+              aria-haspopup="true" 
               onClick={closeMobileMenu}
             >
               Academics <i className='fas fa-caret-down' />
             </Link>
             {academicsDropdown && <AcademicsDropDown />}
+            {/* {academicMobileMenu && (
+              <Menu
+        id="simple-menu"
+        academicMobileMenu={academicMobileMenu}
+        keepMounted
+        open={Boolean(academicMobileMenu)}
+        onClose={() => handleClose()}
+      >
+        <MenuItem onClick={() => handleClose('class')}>Class Schedule</MenuItem>
+        <MenuItem onClick={() => handleClose()}>Exam schedule</MenuItem>
+        <MenuItem onClick={() => handleClose()}>Semester Schedule</MenuItem>
+      </Menu>
+            )} */}
           </li>
           <li
             className='nav-item'
@@ -236,5 +262,6 @@ function Navbar() {
     </>
   );
 }
+
 
 export default Navbar;
